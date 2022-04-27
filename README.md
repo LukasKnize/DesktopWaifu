@@ -5,6 +5,10 @@ HI have you ever felt kinda lonely, wondering how everything will be so easy if 
 **yeah we all want to find a way to make our dreams come true and bring waifu from our screen to reality**
 
 Unfortunately we still don't have a solution for that, but we now have way to have our waifu with us, all the time on our desktop thanks to **DesktopWaifu**
+As one of my favorite artists once said in his song:
+> *"I'd pull her from my screen just like in my dreams
+I want to feel her touch..."*
+MTC, DJ S3RL 2012
 
 DesktopWaifu is awesome open-source project that brings your waifu closer to you. Your waifu will be able to talk to you, recommend you her favorite music, anime show and many more.
 
