@@ -22,7 +22,7 @@ DesktopWaifu is awesome open-source project that brings your waifu closer to you
 Download from web site will be added soon.
 
 ## List of commands that your waifu will understand
-*the command is inside "" but " isn't part of the command (for example if there is "command1" than you should use only command1, not "command1") *
+the command is inside " " but " isn't part of the command (for example if there is "command1" than you should use only command1, not "command1") 
 
 1. "?" - this command will return list of all commands
 2. "#changeWaifu" - this command will take two parameters in following format #changeWaifu/category/tag
