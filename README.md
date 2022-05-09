@@ -31,6 +31,10 @@ the command is inside " " but " isn't part of the command (for example if there 
 3. "#anime" - this command will recommend you random anime show to watch
 4. "#song" - this command will play random song, recommended by your waifu, in your browser
 5. "#site" - this command will recommend you random anime streaming website
+6. "#theme" - this command will take one parameter in following format #theme/type
+    - list of types: dark, light
+
+You can also go back in history and download your waifu
 
 ## Q&A
 >What to do, when I found a bug? 
