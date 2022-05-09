@@ -1,0 +1,4 @@
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.AssemblyReference.cache
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.SuggestedBindingRedirects.cache
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.Form1.resources
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.GenerateResource.cache

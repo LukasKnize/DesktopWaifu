@@ -15,7 +15,8 @@ namespace DesktopWaifu
 {
     public partial class Form1 : Form
     {
-        History history = new History(4); //do zavorky dejte pocet itemu, ktere tam maxialme muzou byt.
+        private History history = new History(4); //do zavorky dejte pocet itemu, ktere tam maxialme muzou byt.
+        private Themes theme_manager = new Themes();
 
         public Form1()
         {
@@ -25,6 +26,7 @@ namespace DesktopWaifu
         private void Form1_Load(object sender, EventArgs e)
         {
             getWaifu("sfw/waifu");
+            theme_manager.Init(this, this.Controls);
         }
 
         private void Submit_Click(object sender, EventArgs e)
@@ -84,14 +86,14 @@ namespace DesktopWaifu
                 //tady se budou volat ty jednotlivé metody ze třídy Themes
                 if (splitedCommand[1] == "dark")
                 {
-                    DarkMode();
+                    theme_manager.Dark();
                 }else if (splitedCommand[1] == "light")
                 {
-                    LightMode();
+                    theme_manager.Light();
                 }
                 else if (splitedCommand[1] == "pink")
                 {
-                    PinkMode();
+                    theme_manager.Pink();
                 }
                 else
                 {
