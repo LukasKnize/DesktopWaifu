@@ -17,6 +17,7 @@ namespace DesktopWaifu
     {
         private History history = new History(4); //do zavorky dejte pocet itemu, ktere tam maxialme muzou byt.
         private Themes theme_manager = new Themes();
+        private History past_commands = new History(1000);
 
         public Form1()
         {
@@ -45,6 +46,7 @@ namespace DesktopWaifu
             string[] songs = {"https://youtu.be/SoKLSIXccgU","https://youtu.be/1R_PRloutY8","https://youtu.be/3NLsyjOH92k","https://youtu.be/DFGJ8PhjrlM","https://youtu.be/sSfAuBS54s4","https://youtu.be/yIfkpbMLLsY","https://youtu.be/i80OHgDwfZI","https://youtu.be/QkQ5SfZ0YlM","https://youtu.be/0oMT_6Zu4a4","https://youtu.be/nCQ_zZIiGLA","https://youtu.be/EVg8orAhz4g"};
             string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/","NSFW!!-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
             Random randomIndex = new Random();
+            past_commands.Add(command);
             
 
             if (command == "?")
@@ -109,6 +111,7 @@ namespace DesktopWaifu
 
         private void getWaifu(string parameters)
         {
+            TextField.Text += TextField.Text.Length == 0 ? "" : "Loading";
             string apiContent;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.waifu.pics/" + parameters);
 
@@ -134,7 +137,7 @@ namespace DesktopWaifu
 
             history.Add(imgUrl[3]);
             DisplayField.Load(history.Current);
-            
+            TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
         }
         private void getAnime()
         {
@@ -167,9 +170,20 @@ namespace DesktopWaifu
         }
         private void EnterField_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode != Keys.Enter) return;
+            if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Down && e.KeyCode != Keys.Up) return;
+            if (e.KeyCode == Keys.Up) {
+                TextField.Text = past_commands.Prev();
+                return;
+            }
+            else if (e.KeyCode == Keys.Down) {
+                TextField.Text = past_commands.Next();
+                return;
+            }
+
+            EnterField.Text = EnterField.Text.Trim();
             string command = EnterField.Text; //stejne tady. Jako what the fuck are you doing, guys?
             if (command != "" || command != " ") executeCommand(command);
+            EnterField.Text = "";
         }
         private void Previous_Click(object sender, EventArgs e)
         {
