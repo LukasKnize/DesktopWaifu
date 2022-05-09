@@ -45,7 +45,7 @@
             // DisplayField
             // 
             this.DisplayField.Location = new System.Drawing.Point(16, 55);
-            this.DisplayField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DisplayField.Margin = new System.Windows.Forms.Padding(4);
             this.DisplayField.Name = "DisplayField";
             this.DisplayField.Size = new System.Drawing.Size(499, 350);
             this.DisplayField.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -61,7 +61,7 @@
             this.Submit.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
             this.Submit.Location = new System.Drawing.Point(1093, 411);
-            this.Submit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Submit.Margin = new System.Windows.Forms.Padding(4);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(120, 30);
             this.Submit.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.TextField.Cursor = System.Windows.Forms.Cursors.Default;
             this.TextField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
             this.TextField.Location = new System.Drawing.Point(572, 55);
-            this.TextField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextField.Margin = new System.Windows.Forms.Padding(4);
             this.TextField.Name = "TextField";
             this.TextField.ReadOnly = true;
             this.TextField.Size = new System.Drawing.Size(641, 350);
@@ -90,10 +90,9 @@
             this.EnterField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnterField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
             this.EnterField.Location = new System.Drawing.Point(572, 411);
-            this.EnterField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EnterField.Multiline = true;
+            this.EnterField.Margin = new System.Windows.Forms.Padding(4);
             this.EnterField.Name = "EnterField";
-            this.EnterField.Size = new System.Drawing.Size(507, 30);
+            this.EnterField.Size = new System.Drawing.Size(507, 16);
             this.EnterField.TabIndex = 3;
             this.EnterField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterField_KeyDown);
             // 
@@ -148,7 +147,7 @@
             this.navBar.Controls.Add(this.minimizeButton);
             this.navBar.Controls.Add(this.closeButton);
             this.navBar.Location = new System.Drawing.Point(0, -1);
-            this.navBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navBar.Margin = new System.Windows.Forms.Padding(4);
             this.navBar.Name = "navBar";
             this.navBar.Size = new System.Drawing.Size(1235, 49);
             this.navBar.TabIndex = 7;
@@ -160,7 +159,7 @@
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Location = new System.Drawing.Point(1160, 16);
-            this.minimizeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minimizeButton.Margin = new System.Windows.Forms.Padding(4);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(23, 21);
             this.minimizeButton.TabIndex = 1;
@@ -173,7 +172,7 @@
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Location = new System.Drawing.Point(1191, 16);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(23, 21);
             this.closeButton.TabIndex = 0;
@@ -197,7 +196,7 @@
             this.Controls.Add(this.DisplayField);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Desktop Waifu";

@@ -13,12 +13,13 @@ using Newtonsoft.Json;
 
 namespace DesktopWaifu
 {
+    public class Common { //aby vsechno mohlo to accessovat
+        internal History<Img> history = new History<Img>(4); //do zavorky dejte pocet itemu, ktere tam maxialme muzou byt.
+        internal Themes theme_manager = new Themes();
+        internal History<string> past_commands = new History<string>(1000);
+    }
     public partial class Form1 : Form
     {
-        private History history = new History(4); //do zavorky dejte pocet itemu, ktere tam maxialme muzou byt.
-        private Themes theme_manager = new Themes();
-        private History past_commands = new History(1000);
-
         public Form1()
         {
             InitializeComponent();
