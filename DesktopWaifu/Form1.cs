@@ -13,11 +13,6 @@ using Newtonsoft.Json;
 
 namespace DesktopWaifu
 {
-    public class Common { //aby vsechno mohlo to accessovat
-        internal History<Img> history = new History<Img>(4); //do zavorky dejte pocet itemu, ktere tam maxialme muzou byt.
-        internal Themes theme_manager = new Themes();
-        internal History<string> past_commands = new History<string>(1000);
-    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -27,8 +22,9 @@ namespace DesktopWaifu
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CacheSystem.init();
+            Common.theme_manager.Init(this, this.Controls, closeButton, minimizeButton);
             getWaifu("sfw/waifu");
-            theme_manager.Init(this, this.Controls);
         }
 
         private void Submit_Click(object sender, EventArgs e)
@@ -47,8 +43,8 @@ namespace DesktopWaifu
             string[] songs = {"https://youtu.be/SoKLSIXccgU","https://youtu.be/1R_PRloutY8","https://youtu.be/3NLsyjOH92k","https://youtu.be/DFGJ8PhjrlM","https://youtu.be/sSfAuBS54s4","https://youtu.be/yIfkpbMLLsY","https://youtu.be/i80OHgDwfZI","https://youtu.be/QkQ5SfZ0YlM","https://youtu.be/0oMT_6Zu4a4","https://youtu.be/nCQ_zZIiGLA","https://youtu.be/EVg8orAhz4g"};
             string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/","NSFW!!-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
             Random randomIndex = new Random();
-            past_commands.Add(command);
-            
+            //Common.past_commands.Add(command); Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju
+
 
             if (command == "?")
             {
@@ -89,14 +85,14 @@ namespace DesktopWaifu
                 //tady se budou volat ty jednotlivé metody ze třídy Themes
                 if (splitedCommand[1] == "dark")
                 {
-                    theme_manager.Dark();
+                    Common.theme_manager.Dark();
                 }else if (splitedCommand[1] == "light")
                 {
-                    theme_manager.Light();
+                    Common.theme_manager.Light();
                 }
                 else if (splitedCommand[1] == "pink")
                 {
-                    theme_manager.Pink();
+                    Common.theme_manager.Pink();
                 }
                 else
                 {
@@ -136,8 +132,8 @@ namespace DesktopWaifu
             string[] imgUrl = apiContent.Split('"');
             //richTextBox1.Text = subs[3];
 
-            history.Add(imgUrl[3]);
-            DisplayField.Load(history.Current);
+            Common.history.Add(imgUrl[3]);
+            DisplayField.Load(Common.history.Current.path);
             TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
         }
         private void getAnime()
@@ -172,31 +168,30 @@ namespace DesktopWaifu
         private void EnterField_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Down && e.KeyCode != Keys.Up) return;
+            /* Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju
             if (e.KeyCode == Keys.Up) {
-                TextField.Text = past_commands.Prev();
+                EnterField.Text = Common.past_commands.Prev();
                 return;
             }
             else if (e.KeyCode == Keys.Down) {
-                TextField.Text = past_commands.Next();
+                EnterField.Text = Common.past_commands.Next();
                 return;
             }
-
-            EnterField.Text = EnterField.Text.Trim();
+            */
             string command = EnterField.Text; //stejne tady. Jako what the fuck are you doing, guys?
             if (command != "" || command != " ") executeCommand(command);
-            EnterField.Text = "";
         }
         private void Previous_Click(object sender, EventArgs e)
         {
-            DisplayField.Load(history.Prev());
+            DisplayField.Load(Common.history.Prev().path);
         }
         private void Next_Click(object sender, EventArgs e)
         {
-            DisplayField.Load(history.Next());
+            DisplayField.Load(Common.history.Next().path);
         }
 
         private void save_Click(object sender, EventArgs e) {
-            history.Save();
+            CacheSystem.Save(Common.history.Current);
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -228,5 +223,9 @@ namespace DesktopWaifu
             }
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+            if (!DisplayField.IsDisposed) DisplayField.Dispose();
+            CacheSystem.Destroy();
+        }
     }
 }

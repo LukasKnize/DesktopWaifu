@@ -12,12 +12,14 @@ namespace DesktopWaifu
     {
         private Dictionary<string, Control> controls = new Dictionary<string, Control>();
         private Form form;
-        public void Init(Form form, Control.ControlCollection controls) {
+        public void Init(Form form, Control.ControlCollection controls, Control closeButton, Control minimizeButton) {
             foreach (var item in controls) { //tady je to bez this a tak to bere parametr ze zavorky metody
                 this.controls[(item as Control).Name] = item as Control; //this.controls rekne ze chceme pouzit "atribut" teto tridy coz je ten Dictionary.
                 // bez toho this by to vzalo parametr ze zavorky u metody
             }
-            this.form = form; 
+            this.form = form;
+            this.controls["closeButton"] = closeButton;
+            this.controls["minimizeButton"] = minimizeButton;
         }
         public void Dark()
         {

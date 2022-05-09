@@ -21,23 +21,30 @@ namespace DesktopWaifu {
         
         internal T Current { get { return _history[_curr]; } }
         internal T Next() {
+            if (_history.Count <= 0) return default(T);
             if (_curr >= _history.Count-1) return _history[_curr];
             _curr++;
             return _history[_curr];
         }
         internal T Prev() {
+            if (_history.Count <=0) return default(T);
             if (_curr <= 0) return _history[0];
             _curr--;
             return _history[_curr];
         }
-        internal void Add(T new_item, out T destroyed) {
-            destroyed = null;
+        internal bool Add(T new_item, out T destroyed) {
+            var destroy = false;
             _history.Add(new_item);
+            destroyed = _history[0];
             if (_history.Count > _max) {
-
                 _history.RemoveAt(0);
+                destroy = true;
             }
             _curr = _history.Count-1;
+            return destroy;
+        }
+        internal void Add(T new_item) {
+            Add(new_item, out _);
         }
         internal T GetIndex(int index) {
             return _history[index];

@@ -10,7 +10,7 @@ using System.Net.Http;
 namespace DesktopWaifu {
     internal class CacheSystem {
 
-        static private string cache = "./cache/";
+        static internal string cache = "./cache/";
 
         static internal Img Cache(string url) {
             var split = url.Split('/');
@@ -18,7 +18,10 @@ namespace DesktopWaifu {
             if (!File.Exists(cache + filename)) download(url, filename);
             return new Img(url, filename);
         }
-        static private void init() {
+        static internal void Destroy() {
+            if (Directory.Exists(cache)) Directory.Delete(cache, true);
+        }
+        static internal void init() {
             if (Directory.Exists(cache)) {
                 var files = Directory.GetFiles(cache);
                 foreach (var file in files) {
@@ -38,20 +41,19 @@ namespace DesktopWaifu {
                 }
             }
         }
-        static internal void Save(string path) {
-            var file = path;
+        static internal void Save(Img image) {
             SaveFileDialog savedialog = new SaveFileDialog();
-            var ext = file.Split('.').Last();
+            var ext = image.filename.Split('.').Last();
 
             savedialog.Filter = $"Image (*.{ext})|*.{ext}|All files (*.*)|*.*";
             savedialog.FilterIndex = 1;
             savedialog.RestoreDirectory = true;
-            savedialog.FileName = file.Split('/').Last();
+            savedialog.FileName = image.path.Split('/').Last();
             savedialog.DefaultExt = ext;
 
             if (savedialog.ShowDialog() == DialogResult.OK) {
                 using (var client = new HttpClient()) {
-                    using (var s = client.GetStreamAsync(path)) {
+                    using (var s = client.GetStreamAsync(image.url)) {
                         var f = savedialog.OpenFile();
                         s.Result.CopyTo(f);
                         f.Close();
@@ -63,9 +65,11 @@ namespace DesktopWaifu {
     internal class Img {
         internal string url;
         internal string filename;
+        internal string path;
         internal Img(string url, string filename) {
             this.url = url;
             this.filename = filename;
+            this.path = CacheSystem.cache + filename;
         }
         internal void Destroy() {
             File.Delete(filename);

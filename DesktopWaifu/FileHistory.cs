@@ -19,7 +19,8 @@ namespace DesktopWaifu {
         }
         internal void Add(string url) {
             Img cached_img = CacheSystem.Cache(url);
-            _history.Add(cached_img);
+            var order = _history.Add(cached_img, out Img destroyed);
+            if (order) destroyed.Destroy();
         }
     }
 }

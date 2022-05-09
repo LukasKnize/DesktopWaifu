@@ -201,6 +201,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Desktop Waifu";
             this.TransparencyKey = System.Drawing.Color.GhostWhite;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DisplayField)).EndInit();
             this.navBar.ResumeLayout(false);
