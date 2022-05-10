@@ -22,6 +22,7 @@ namespace DesktopWaifu
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            loading.Visible= false;
             CacheSystem.init();
             Common.theme_manager.Init(this, this.Controls, closeButton, minimizeButton);
             getWaifu("sfw/waifu");
@@ -33,136 +34,23 @@ namespace DesktopWaifu
             if (command != "") executeCommand(command);
         }
 
-
-        private void executeCommand(string command)
-        {
-            TextField.Text += command + "\n" ;
-            string[] splitedCommand = command.Split('/');
-            string[] sfwTags = { "waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "kiss", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe" };
-            string[] nsfwTags = { "waifu", "neko", "trap" };
-            string[] songs = {"https://youtu.be/SoKLSIXccgU","https://youtu.be/1R_PRloutY8","https://youtu.be/3NLsyjOH92k","https://youtu.be/DFGJ8PhjrlM","https://youtu.be/sSfAuBS54s4","https://youtu.be/yIfkpbMLLsY","https://youtu.be/i80OHgDwfZI","https://youtu.be/QkQ5SfZ0YlM","https://youtu.be/0oMT_6Zu4a4","https://youtu.be/nCQ_zZIiGLA","https://youtu.be/EVg8orAhz4g"};
-            string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/","NSFW!!-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
-            Random randomIndex = new Random();
-            //Common.past_commands.Add(command); Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju
-
-
-            if (command == "?")
-            {
-                TextField.Text += "List of commands: \n #changeWaifu/category/tag \n ...list of categorys: sfw, nsfw \n ...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe \n list of nsfw tags: waifu, neko, trap \n #anime \n #song \n #site";
-                TextField.Text += "\n";
-            }
-            else if (splitedCommand[0] == "#changeWaifu")
-            {
-                if (splitedCommand[1] == "sfw" && sfwTags.Contains(splitedCommand[2]))
-                {
-                    getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
-                }
-                else if (splitedCommand[1] == "nsfw" && nsfwTags.Contains(splitedCommand[2]))
-                {
-                    getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
-                }
-                else
-                {
-                    TextField.Text += "invalid command, try ?" + "\n";
-                }
-            }
-            else if (command == "#song")
-            {
-                Nullable<int> index = randomIndex.Next(0, songs.Length-1);
-                System.Diagnostics.Process.Start(songs[index != null? (int)index:0]);
-            }
-            else if(command == "#anime")
-            {
-                getAnime();
-            }
-            else if(command== "#site")
-            {
-                Nullable<int> index = randomIndex.Next(0, animeSites.Length - 1);
-                TextField.Text += animeSites[index != null ? (int)index : 0] + "\n";
-            }
-            else if (splitedCommand[0] == "#theme")
-            {
-                //tady se budou volat ty jednotlivé metody ze třídy Themes
-                if (splitedCommand[1] == "dark")
-                {
-                    Common.theme_manager.Dark();
-                }else if (splitedCommand[1] == "light")
-                {
-                    Common.theme_manager.Light();
-                }
-                else if (splitedCommand[1] == "pink")
-                {
-                    Common.theme_manager.Pink();
-                }
-                else
-                {
-                    TextField.Text += "invalid command, try ?" + "\n";
-                }
-            }
-            else
-            {
-                TextField.Text += "invalid command, try ?" + "\n";
-                
-            }
-        }
-
         private void getWaifu(string parameters)
         {
-            TextField.Text += TextField.Text.Length == 0 ? "" : "Loading";
-            string apiContent;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.waifu.pics/" + parameters);
-
-            // Set some reasonable limits on resources used by this request
-            request.MaximumAutomaticRedirections = 4;
-            request.MaximumResponseHeadersLength = 4;
-            // Set credentials to use for this request.
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            // Get the stream associated with the response.
-            Stream receiveStream = response.GetResponseStream();
-
-            // Pipes the stream to a higher level stream reader with the required encoding format.
-            StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
-
-
-            apiContent = readStream.ReadToEnd();
-            response.Close();
-            readStream.Close();
-            string[] imgUrl = apiContent.Split('"');
-            //richTextBox1.Text = subs[3];
-
-            Common.history.Add(imgUrl[3]);
+            //TextField.Text += TextField.Text.Length == 0 ? "" : "Loading";
+            loading.Visible = true;
+            this.Refresh();
+            string img_url = Getter.getWaifu(parameters);
+            Common.history.Add(img_url);
             DisplayField.Load(Common.history.Current.path);
-            TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
+            //TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
+            loading.Visible = false;
+            this.Refresh();
         }
         private void getAnime()
         {
-            
-            string apiContent;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.jikan.moe/v4/random/anime");
-
-            // Set some reasonable limits on resources used by this request
-            request.MaximumAutomaticRedirections = 4;
-            request.MaximumResponseHeadersLength = 4;
-            // Set credentials to use for this request.
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            // Get the stream associated with the response.
-            Stream receiveStream = response.GetResponseStream();
-
-            // Pipes the stream to a higher level stream reader with the required encoding format.
-            StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
-
-            
-            apiContent = readStream.ReadToEnd();
-            response.Close();
-            readStream.Close();
-
-            Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(apiContent);
-            TextField.Text += myDeserializedClass.data.title + "\n";
-            TextField.Text += myDeserializedClass.data.images;
+            var apireturn = Getter.getAnime();
+            TextField.Text += apireturn.Item1 + "\n"; //Item1 accessne prvni item v tuplu takze string
+            TextField.Text += apireturn.Item2.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
 
         }
         private void EnterField_KeyDown(object sender, KeyEventArgs e)
@@ -227,5 +115,64 @@ namespace DesktopWaifu
             if (!DisplayField.IsDisposed) DisplayField.Dispose();
             CacheSystem.Destroy();
         }
+        #region Command execution
+        private void executeCommand(string command) {
+            TextField.Text += command + "\n";
+            string[] splitedCommand = command.Split('/');
+            string[] sfwTags = { "waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "kiss", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe" };
+            string[] nsfwTags = { "waifu", "neko", "trap" };
+            string[] songs = { "https://youtu.be/SoKLSIXccgU", "https://youtu.be/1R_PRloutY8", "https://youtu.be/3NLsyjOH92k", "https://youtu.be/DFGJ8PhjrlM", "https://youtu.be/sSfAuBS54s4", "https://youtu.be/yIfkpbMLLsY", "https://youtu.be/i80OHgDwfZI", "https://youtu.be/QkQ5SfZ0YlM", "https://youtu.be/0oMT_6Zu4a4", "https://youtu.be/nCQ_zZIiGLA", "https://youtu.be/EVg8orAhz4g" };
+            string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/", "NSFW!!-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
+            Random randomIndex = new Random();
+            //Common.past_commands.Add(command); Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju
+
+
+            if (command == "?") {
+                TextField.Text += "List of commands: \n #changeWaifu/category/tag \n ...list of categorys: sfw, nsfw \n ...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe \n list of nsfw tags: waifu, neko, trap \n #anime \n #song \n #site";
+                TextField.Text += "\n";
+            }
+            else if (splitedCommand[0] == "#changeWaifu") {
+                if (splitedCommand[1] == "sfw" && sfwTags.Contains(splitedCommand[2])) {
+                    getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
+                }
+                else if (splitedCommand[1] == "nsfw" && nsfwTags.Contains(splitedCommand[2])) {
+                    getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
+                }
+                else {
+                    TextField.Text += "invalid command, try ?" + "\n";
+                }
+            }
+            else if (command == "#song") {
+                Nullable<int> index = randomIndex.Next(0, songs.Length - 1);
+                System.Diagnostics.Process.Start(songs[index != null ? (int)index : 0]);
+            }
+            else if (command == "#anime") {
+                getAnime();
+            }
+            else if (command == "#site") {
+                Nullable<int> index = randomIndex.Next(0, animeSites.Length - 1);
+                TextField.Text += animeSites[index != null ? (int)index : 0] + "\n";
+            }
+            else if (splitedCommand[0] == "#theme") {
+                //tady se budou volat ty jednotlivé metody ze třídy Themes
+                if (splitedCommand[1] == "dark") {
+                    Common.theme_manager.Dark();
+                }
+                else if (splitedCommand[1] == "light") {
+                    Common.theme_manager.Light();
+                }
+                else if (splitedCommand[1] == "pink") {
+                    Common.theme_manager.Pink();
+                }
+                else {
+                    TextField.Text += "invalid command, try ?" + "\n";
+                }
+            }
+            else {
+                TextField.Text += "invalid command, try ?" + "\n";
+
+            }
+        }
+        #endregion
     }
 }

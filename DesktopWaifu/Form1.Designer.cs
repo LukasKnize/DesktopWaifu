@@ -38,6 +38,7 @@
             this.navBar = new System.Windows.Forms.Panel();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.loading = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayField)).BeginInit();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +180,20 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // loading
+            // 
+            this.loading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.loading.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loading.ForeColor = System.Drawing.Color.White;
+            this.loading.Location = new System.Drawing.Point(572, 435);
+            this.loading.Multiline = false;
+            this.loading.Name = "loading";
+            this.loading.ReadOnly = true;
+            this.loading.Size = new System.Drawing.Size(78, 27);
+            this.loading.TabIndex = 8;
+            this.loading.Text = "Loading...";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,6 +201,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1229, 474);
+            this.Controls.Add(this.loading);
             this.Controls.Add(this.navBar);
             this.Controls.Add(this.save);
             this.Controls.Add(this.Next);
@@ -222,6 +238,7 @@
         private System.Windows.Forms.Panel navBar;
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.RichTextBox loading;
     }
 }
 
