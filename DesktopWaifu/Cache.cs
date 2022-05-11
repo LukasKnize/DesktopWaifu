@@ -72,7 +72,7 @@ namespace DesktopWaifu {
             this.path = CacheSystem.cache + filename;
         }
         internal void Destroy() {
-            File.Delete(filename);
+            File.Delete(path);
         }
     }
 }

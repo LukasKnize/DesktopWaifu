@@ -23,6 +23,7 @@ namespace DesktopWaifu
         private void Form1_Load(object sender, EventArgs e)
         {
             loading.Visible= false;
+            Common.history._btn_disable(Next);
             CacheSystem.init();
             Common.theme_manager.Init(this, this.Controls, closeButton, minimizeButton);
             getWaifu("sfw/waifu");

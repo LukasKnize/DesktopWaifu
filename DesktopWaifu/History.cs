@@ -10,7 +10,7 @@ using System.Net.Http;
 namespace DesktopWaifu {
     internal class History<T> {
         private int _max; // Maximalni pocet itemu
-        private int _curr = 0;
+        internal int _curr = 0;
         private List<T> _history = new List<T>();
         // _ < - 0 [] [] [] [] 4 < - E
         //       - O   < -   N + (old-new)
@@ -20,17 +20,19 @@ namespace DesktopWaifu {
         }
         
         internal T Current { get { return _history[_curr]; } }
-        internal T Next() {
-            if (_history.Count <= 0) return default(T);
-            if (_curr >= _history.Count-1) return _history[_curr];
+        internal (bool,T) Next() {
+            if (_history.Count <= 0) return (false, default(T));
+            if (_curr >= _history.Count-1) return (false, _history[_curr]);
             _curr++;
-            return _history[_curr];
+            var ret = _curr >=_max-1 ? false : true;
+            return (ret,_history[_curr]);
         }
-        internal T Prev() {
-            if (_history.Count <=0) return default(T);
-            if (_curr <= 0) return _history[0];
+        internal (bool, T) Prev() {
+            if (_history.Count <=0) return (false, default(T));
+            if (_curr <= 0) return (false,_history[0]);
             _curr--;
-            return _history[_curr];
+            var ret = _curr >= _max - 1 ? false : true;
+            return (ret, _history[_curr]);
         }
         internal bool Add(T new_item, out T destroyed) {
             var destroy = false;

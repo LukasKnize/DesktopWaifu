@@ -81,6 +81,7 @@
             this.TextField.Margin = new System.Windows.Forms.Padding(4);
             this.TextField.Name = "TextField";
             this.TextField.ReadOnly = true;
+            this.TextField.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.TextField.Size = new System.Drawing.Size(641, 350);
             this.TextField.TabIndex = 2;
             this.TextField.Text = "";
@@ -230,17 +231,17 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox DisplayField;
-        private System.Windows.Forms.Button Submit;
-        private System.Windows.Forms.RichTextBox TextField;
-        private System.Windows.Forms.TextBox EnterField;
-        private System.Windows.Forms.Button Previous;
-        private System.Windows.Forms.Button Next;
-        private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Panel navBar;
-        private System.Windows.Forms.Button minimizeButton;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.RichTextBox loading;
+        internal System.Windows.Forms.PictureBox DisplayField;
+        internal System.Windows.Forms.Button Submit;
+        internal System.Windows.Forms.RichTextBox TextField;
+        internal System.Windows.Forms.TextBox EnterField;
+        internal System.Windows.Forms.Button Previous;
+        internal System.Windows.Forms.Button Next;
+        internal System.Windows.Forms.Button save;
+        internal System.Windows.Forms.Panel navBar;
+        internal System.Windows.Forms.Button minimizeButton;
+        internal System.Windows.Forms.Button closeButton;
+        internal System.Windows.Forms.RichTextBox loading;
     }
 }
 
