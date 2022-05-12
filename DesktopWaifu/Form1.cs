@@ -41,12 +41,14 @@ namespace DesktopWaifu
             //TextField.Text += TextField.Text.Length == 0 ? "" : "Loading";
             Loading.Visible = true;
             this.Refresh();
+            Cursor.Current = Cursors.WaitCursor;
             string img_url = Getter.getWaifu(parameters);
             Common.ImgHistory.Add(img_url);
             Display.Load(Common.ImgHistory.Current.path);
             //TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
             Loading.Visible = false;
             this.Refresh();
+            Cursor.Current = Cursors.Default;
         }
         private void getAnime()
         {
@@ -55,16 +57,18 @@ namespace DesktopWaifu
             Output.Text += apireturn.Item2.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
 
         }
-        private void EnterField_KeyDown(object sender, KeyEventArgs e)
+        private void Input_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Down && e.KeyCode != Keys.Up) return;
             /* Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju */
             if (e.KeyCode == Keys.Up) {
                 Input.Text = Common.CmdHistory.Prev();
+                Input.SelectionStart = Input.Text.Length+1;
                 return;
             }
             else if (e.KeyCode == Keys.Down) {
                 Input.Text = Common.CmdHistory.Next();
+                Input.SelectionStart = Input.Text.Length+1;
                 return;
             }
             string command = Input.Text; //stejne tady. Jako what the fuck are you doing, guys?
