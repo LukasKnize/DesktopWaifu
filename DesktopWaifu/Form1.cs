@@ -13,74 +13,75 @@ using Newtonsoft.Json;
 
 namespace DesktopWaifu
 {
-    public partial class Form1 : Form
+    public partial class DesktopWaifu : Form
     {
-        public Form1()
+        public DesktopWaifu()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            loading.Visible= false;
-            Common.history._btn_disable(Next);
+            Loading.Visible= false;
+            Common.ImgHistory._btn_disable(Next);
             CacheSystem.init();
             Common.theme_manager.Init(this, this.Controls, closeButton, minimizeButton);
             getWaifu("sfw/waifu");
+            Input.Focus();
         }
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            string command = EnterField.Text; //kamo tohle jako se da dat do jednoho posraneho radku.
+            string command = Input.Text; //kamo tohle jako se da dat do jednoho posraneho radku.
             if (command != "") executeCommand(command);
         }
 
         private void getWaifu(string parameters)
         {
             //TextField.Text += TextField.Text.Length == 0 ? "" : "Loading";
-            loading.Visible = true;
+            Loading.Visible = true;
             this.Refresh();
             string img_url = Getter.getWaifu(parameters);
-            Common.history.Add(img_url);
-            DisplayField.Load(Common.history.Current.path);
+            Common.ImgHistory.Add(img_url);
+            Display.Load(Common.ImgHistory.Current.path);
             //TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
-            loading.Visible = false;
+            Loading.Visible = false;
             this.Refresh();
         }
         private void getAnime()
         {
             var apireturn = Getter.getAnime();
-            TextField.Text += apireturn.Item1 + "\n"; //Item1 accessne prvni item v tuplu takze string
-            TextField.Text += apireturn.Item2.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
+            Output.Text += apireturn.Item1 + "\n"; //Item1 accessne prvni item v tuplu takze string
+            Output.Text += apireturn.Item2.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
 
         }
         private void EnterField_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Down && e.KeyCode != Keys.Up) return;
-            /* Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju
+            /* Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju */
             if (e.KeyCode == Keys.Up) {
-                EnterField.Text = Common.past_commands.Prev();
+                Input.Text = Common.CmdHistory.Prev();
                 return;
             }
             else if (e.KeyCode == Keys.Down) {
-                EnterField.Text = Common.past_commands.Next();
+                Input.Text = Common.CmdHistory.Next();
                 return;
             }
-            */
-            string command = EnterField.Text; //stejne tady. Jako what the fuck are you doing, guys?
+            string command = Input.Text; //stejne tady. Jako what the fuck are you doing, guys?
+            Input.Text = "";
             if (command != "" || command != " ") executeCommand(command);
         }
         private void Previous_Click(object sender, EventArgs e)
         {
-            DisplayField.Load(Common.history.Prev().path);
+            Display.Load(Common.ImgHistory.Prev().path);
         }
         private void Next_Click(object sender, EventArgs e)
         {
-            DisplayField.Load(Common.history.Next().path);
+            Display.Load(Common.ImgHistory.Next().path);
         }
 
         private void save_Click(object sender, EventArgs e) {
-            CacheSystem.Save(Common.history.Current);
+            CacheSystem.Save(Common.ImgHistory.Current);
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -113,12 +114,14 @@ namespace DesktopWaifu
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
-            if (!DisplayField.IsDisposed) DisplayField.Dispose();
+            if (!Display.IsDisposed) Display.Dispose();
             CacheSystem.Destroy();
         }
         #region Command execution
         private void executeCommand(string command) {
-            TextField.Text += command + "\n";
+            if (Output.Text.Split('\n').Length > 22) Output.Text = "";
+            Common.CmdHistory.Add(command);
+            Output.Text += command + "\n";
             string[] splitedCommand = command.Split('/');
             string[] sfwTags = { "waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "kiss", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe" };
             string[] nsfwTags = { "waifu", "neko", "trap" };
@@ -129,8 +132,8 @@ namespace DesktopWaifu
 
 
             if (command == "?") {
-                TextField.Text += "List of commands: \n #changeWaifu/category/tag \n ...list of categorys: sfw, nsfw \n ...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe \n list of nsfw tags: waifu, neko, trap \n #anime \n #song \n #site";
-                TextField.Text += "\n";
+                Output.Text += "List of commands: \n #changeWaifu/category/tag \n ...list of categorys: sfw, nsfw \n ...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe \n list of nsfw tags: waifu, neko, trap \n #anime \n #song \n #site";
+                Output.Text += "\n";
             }
             else if (splitedCommand[0] == "#changeWaifu") {
                 if (splitedCommand[1] == "sfw" && sfwTags.Contains(splitedCommand[2])) {
@@ -140,7 +143,7 @@ namespace DesktopWaifu
                     getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
                 }
                 else {
-                    TextField.Text += "invalid command, try ?" + "\n";
+                    Output.Text += "invalid command, try ?" + "\n";
                 }
             }
             else if (command == "#song") {
@@ -152,7 +155,7 @@ namespace DesktopWaifu
             }
             else if (command == "#site") {
                 Nullable<int> index = randomIndex.Next(0, animeSites.Length - 1);
-                TextField.Text += animeSites[index != null ? (int)index : 0] + "\n";
+                Output.Text += animeSites[index != null ? (int)index : 0] + "\n";
             }
             else if (splitedCommand[0] == "#theme") {
                 //tady se budou volat ty jednotlivé metody ze třídy Themes
@@ -166,11 +169,11 @@ namespace DesktopWaifu
                     Common.theme_manager.Pink();
                 }
                 else {
-                    TextField.Text += "invalid command, try ?" + "\n";
+                    Output.Text += "invalid command, try ?" + "\n";
                 }
             }
             else {
-                TextField.Text += "invalid command, try ?" + "\n";
+                Output.Text += "invalid command, try ?" + "\n";
 
             }
         }

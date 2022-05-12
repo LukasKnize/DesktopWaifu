@@ -24,66 +24,66 @@ namespace DesktopWaifu
         public void Dark()
         {
             controls["navBar"].BackColor = Color.FromArgb(24, 30, 54);
-            controls["TextField"].BackColor = Color.FromArgb(37, 42, 64);
+            controls["Output"].BackColor = Color.FromArgb(37, 42, 64);
             controls["Next"].BackColor = Color.FromArgb(37, 42, 64);
             controls["Previous"].BackColor = Color.FromArgb(37, 42, 64);
-            controls["save"].BackColor = Color.FromArgb(37, 42, 64);
-            controls["EnterField"].BackColor = Color.FromArgb(37, 42, 64);
+            controls["Save"].BackColor = Color.FromArgb(37, 42, 64);
+            controls["Input"].BackColor = Color.FromArgb(37, 42, 64);
             controls["Submit"].BackColor = Color.FromArgb(37, 42, 64);
-            controls["loading"].BackColor = Color.FromArgb(46, 51, 73);
+            controls["Loading"].BackColor = Color.FromArgb(46, 51, 73);
             form.BackColor = Color.FromArgb(46, 51, 73);
 
-            controls["TextField"].ForeColor = Color.FromArgb(226, 227, 230);
+            controls["Output"].ForeColor = Color.FromArgb(226, 227, 230);
             controls["Next"].ForeColor = Color.FromArgb(226, 227, 230);
             controls["Previous"].ForeColor = Color.FromArgb(226, 227, 230);
-            controls["save"].ForeColor = Color.FromArgb(226, 227, 230);
-            controls["EnterField"].ForeColor = Color.FromArgb(226, 227, 230);
+            controls["Save"].ForeColor = Color.FromArgb(226, 227, 230);
+            controls["Input"].ForeColor = Color.FromArgb(226, 227, 230);
             controls["Submit"].ForeColor = Color.FromArgb(226, 227, 230);
-            controls["loading"].ForeColor = Color.FromArgb(226, 227, 230);
+            controls["Loading"].ForeColor = Color.FromArgb(226, 227, 230);
         }
 
         public void Light()
         {
             controls["navBar"].BackColor = Color.FromArgb(37, 59, 163);
-            controls["TextField"].BackColor = Color.FromArgb(255, 255, 255);
+            controls["Output"].BackColor = Color.FromArgb(255, 255, 255);
             controls["Next"].BackColor = Color.FromArgb(255, 255, 255);
             controls["Previous"].BackColor = Color.FromArgb(255, 255, 255);
-            controls["save"].BackColor = Color.FromArgb(255, 255, 255);
-            controls["EnterField"].BackColor = Color.FromArgb(255, 255, 255);
+            controls["Save"].BackColor = Color.FromArgb(255, 255, 255);
+            controls["Input"].BackColor = Color.FromArgb(255, 255, 255);
             controls["Submit"].BackColor = Color.FromArgb(255, 255, 255);
-            controls["loading"].BackColor = Color.FromArgb(199, 204, 217);
+            controls["Loading"].BackColor = Color.FromArgb(199, 204, 217);
             form.BackColor = Color.FromArgb(199, 204, 217);
 
-            controls["TextField"].ForeColor = Color.FromArgb(44, 44, 44);
+            controls["Output"].ForeColor = Color.FromArgb(44, 44, 44);
             controls["Next"].ForeColor = Color.FromArgb(44, 44, 44);
             controls["Previous"].ForeColor = Color.FromArgb(44, 44, 44);
-            controls["save"].ForeColor = Color.FromArgb(44, 44, 44);
-            controls["EnterField"].ForeColor = Color.FromArgb(44, 44, 44);
+            controls["Save"].ForeColor = Color.FromArgb(44, 44, 44);
+            controls["Input"].ForeColor = Color.FromArgb(44, 44, 44);
             controls["Submit"].ForeColor = Color.FromArgb(44, 44, 44);
-            controls["loading"].ForeColor = Color.FromArgb(44, 44, 44);
+            controls["Loading"].ForeColor = Color.FromArgb(44, 44, 44);
         }
 
         public void Pink()
         {
             controls["navBar"].BackColor = Color.FromArgb(149, 16, 105);
-            controls["TextField"].BackColor = Color.FromArgb(255, 255, 255);
+            controls["Output"].BackColor = Color.FromArgb(255, 255, 255);
             controls["Next"].BackColor = Color.FromArgb(252, 27, 155);
             controls["Previous"].BackColor = Color.FromArgb(252, 27, 155);
-            controls["save"].BackColor = Color.FromArgb(252, 27, 155);
-            controls["EnterField"].BackColor = Color.FromArgb(255, 255, 255);
+            controls["Save"].BackColor = Color.FromArgb(252, 27, 155);
+            controls["Input"].BackColor = Color.FromArgb(255, 255, 255);
             controls["Submit"].BackColor = Color.FromArgb(252, 27, 155);
-            controls["loading"].BackColor = Color.FromArgb(253, 159, 212);
+            controls["Loading"].BackColor = Color.FromArgb(253, 159, 212);
             controls["closeButton"].BackColor = Color.FromArgb(255, 46, 0);
             controls["minimizeButton"].BackColor = Color.FromArgb(253, 159, 212);
             form.BackColor = Color.FromArgb(253, 159, 212);
 
-            controls["TextField"].ForeColor = Color.FromArgb(149, 16, 105);
+            controls["Output"].ForeColor = Color.FromArgb(149, 16, 105);
             controls["Next"].ForeColor = Color.FromArgb(149, 16, 105);
             controls["Previous"].ForeColor = Color.FromArgb(149, 16, 105);
-            controls["save"].ForeColor = Color.FromArgb(149, 16, 105);
-            controls["EnterField"].ForeColor = Color.FromArgb(149, 16, 105);
+            controls["Save"].ForeColor = Color.FromArgb(149, 16, 105);
+            controls["Input"].ForeColor = Color.FromArgb(149, 16, 105);
             controls["Submit"].ForeColor = Color.FromArgb(149, 16, 105);
-            controls["loading"].ForeColor = Color.FromArgb(149, 16, 105);
+            controls["Loading"].ForeColor = Color.FromArgb(149, 16, 105);
         }
     }
 }

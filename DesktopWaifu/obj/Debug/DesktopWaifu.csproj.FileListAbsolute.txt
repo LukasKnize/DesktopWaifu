@@ -25,4 +25,4 @@ C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\bin\Debug\Deskt
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\bin\Debug\Newtonsoft.Json.dll
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\bin\Debug\Newtonsoft.Json.xml
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.CopyComplete
-C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.Form1.resources
+C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.DesktopWaifu.resources

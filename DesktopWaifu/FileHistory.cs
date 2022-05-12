@@ -15,11 +15,9 @@ namespace DesktopWaifu {
     internal class FileHistory {
         private History<Img> _history;
         private (Button, Button) buttons;
-        private int _max;
         public FileHistory(int maxItems, (Button, Button) buttons) {
             _history = new History<Img>(maxItems);
             this.buttons = buttons;
-            _max = maxItems;
         }
         internal Img Current { get { return _history.Current; } }
         internal Img Prev() {

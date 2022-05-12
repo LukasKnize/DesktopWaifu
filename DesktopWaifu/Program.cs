@@ -11,13 +11,13 @@ namespace DesktopWaifu
         /// <summary>
         /// Hlavní vstupní bod aplikace.
         /// </summary>
-        static public Form1 form;
+        static public DesktopWaifu form;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            form = new Form1();
+            form = new DesktopWaifu();
             Application.Run(form);
         }
     }
