@@ -39,7 +39,7 @@
             this.navBar = new System.Windows.Forms.Panel();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.loading = new System.Windows.Forms.RichTextBox();
+            this.loading = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayField)).BeginInit();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,8 @@
             // 
             this.TextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.TextField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextField.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextField.CausesValidation = false;
+            this.TextField.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TextField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
             this.TextField.Location = new System.Drawing.Point(572, 55);
             this.TextField.Margin = new System.Windows.Forms.Padding(4);
@@ -184,16 +185,13 @@
             // 
             // loading
             // 
-            this.loading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.loading.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.loading.AutoSize = true;
             this.loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loading.ForeColor = System.Drawing.Color.White;
-            this.loading.Location = new System.Drawing.Point(572, 435);
-            this.loading.Multiline = false;
+            this.loading.Location = new System.Drawing.Point(568, 431);
             this.loading.Name = "loading";
-            this.loading.ReadOnly = true;
-            this.loading.Size = new System.Drawing.Size(78, 27);
-            this.loading.TabIndex = 8;
+            this.loading.Size = new System.Drawing.Size(80, 20);
+            this.loading.TabIndex = 9;
             this.loading.Text = "Loading...";
             // 
             // Form1
@@ -241,7 +239,7 @@
         internal System.Windows.Forms.Panel navBar;
         internal System.Windows.Forms.Button minimizeButton;
         internal System.Windows.Forms.Button closeButton;
-        internal System.Windows.Forms.RichTextBox loading;
+        private System.Windows.Forms.Label loading;
     }
 }
 
