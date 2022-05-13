@@ -74,6 +74,7 @@
             // Previous
             // 
             this.Previous.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.Previous.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Previous.FlatAppearance.BorderSize = 0;
             this.Previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Previous.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
@@ -89,6 +90,7 @@
             // Next
             // 
             this.Next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Next.FlatAppearance.BorderSize = 0;
             this.Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
@@ -104,6 +106,7 @@
             // Save
             // 
             this.Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Save.FlatAppearance.BorderSize = 0;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
@@ -131,6 +134,7 @@
             // minimizeButton
             // 
             this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(168)))), ((int)(((byte)(124)))));
+            this.minimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Location = new System.Drawing.Point(1160, 16);
@@ -144,6 +148,7 @@
             // closeButton
             // 
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
+            this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Location = new System.Drawing.Point(1191, 16);
@@ -219,8 +224,6 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1226, 474);
-            this.MinimumSize = new System.Drawing.Size(1226, 474);
             this.Name = "DesktopWaifu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Desktop Waifu";

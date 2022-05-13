@@ -5,10 +5,15 @@ C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\Newtonsoft.Json.dll
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\Newtonsoft.Json.xml
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.csproj.AssemblyReference.cache
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.csproj.SuggestedBindingRedirects.cache
-C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.Form1.resources
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.Properties.Resources.resources
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.csproj.GenerateResource.cache
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.csproj.CoreCompileInputs.cache
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.csproj.CopyComplete
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.exe
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.pdb
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\DesktopWaifu.exe.config
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\DesktopWaifu.exe
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\DesktopWaifu.pdb
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\Newtonsoft.Json.dll
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\Newtonsoft.Json.xml
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.DesktopWaifu.resources
