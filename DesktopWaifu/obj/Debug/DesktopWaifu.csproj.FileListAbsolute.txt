@@ -1,6 +1,5 @@
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.AssemblyReference.cache
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.SuggestedBindingRedirects.cache
-C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.Form1.resources
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.GenerateResource.cache
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\DesktopWaifu.exe.config
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\DesktopWaifu.exe
@@ -26,3 +25,4 @@ C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\bin\Debug\Newto
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\bin\Debug\Newtonsoft.Json.xml
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.CopyComplete
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.DesktopWaifu.resources
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.DesktopWaifu.resources

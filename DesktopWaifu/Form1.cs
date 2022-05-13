@@ -12,7 +12,7 @@ using System.IO;
 using Newtonsoft.Json;
 
 namespace DesktopWaifu
-{//change
+{
     public partial class DesktopWaifu : Form
     {
         public DesktopWaifu()
