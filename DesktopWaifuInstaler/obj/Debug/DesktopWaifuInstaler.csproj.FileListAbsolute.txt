@@ -1,0 +1,10 @@
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\bin\Debug\DesktopWaifuInstaler.exe.config
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\bin\Debug\DesktopWaifuInstaler.exe
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\bin\Debug\DesktopWaifuInstaler.pdb
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.csprojAssemblyReference.cache
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.Form1.resources
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.Properties.Resources.resources
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.csproj.GenerateResource.cache
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.csproj.CoreCompileInputs.cache
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.exe
+C:\Users\knize.lu.2019\Desktop\DesktopWaifuInstaler\DesktopWaifuInstaler\obj\Debug\DesktopWaifuInstaler.pdb
