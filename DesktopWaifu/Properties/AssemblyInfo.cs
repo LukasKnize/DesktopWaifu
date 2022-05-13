@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // sadu atributů. Změnou hodnot těchto atributů se upraví informace
 // přidružené k sestavení.
 [assembly: AssemblyTitle("DesktopWaifu")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Open Source program for Waifu Enjoyers")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("DesktopWaifu")]
