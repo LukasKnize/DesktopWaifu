@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DesktopWaifu));
             this.Display = new System.Windows.Forms.PictureBox();
             this.Submit = new System.Windows.Forms.Button();
-            this.Output = new System.Windows.Forms.RichTextBox();
             this.Previous = new System.Windows.Forms.Button();
             this.Next = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.Loading = new System.Windows.Forms.Label();
             this.Input = new System.Windows.Forms.RichTextBox();
+            this.Output = new global::DesktopWaifu.ExRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
@@ -70,23 +70,6 @@
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = false;
             this.Submit.Click += new System.EventHandler(this.Submit_Click);
-            // 
-            // Output
-            // 
-            this.Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.Output.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Output.CausesValidation = false;
-            this.Output.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Output.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Output.Location = new System.Drawing.Point(575, 56);
-            this.Output.Margin = new System.Windows.Forms.Padding(4);
-            this.Output.Name = "Output";
-            this.Output.ReadOnly = true;
-            this.Output.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.Output.Size = new System.Drawing.Size(641, 350);
-            this.Output.TabIndex = 2;
-            this.Output.TabStop = false;
-            this.Output.Text = "";
             // 
             // Previous
             // 
@@ -141,7 +124,7 @@
             this.navBar.Location = new System.Drawing.Point(0, -1);
             this.navBar.Margin = new System.Windows.Forms.Padding(4);
             this.navBar.Name = "navBar";
-            this.navBar.Size = new System.Drawing.Size(1235, 49);
+            this.navBar.Size = new System.Drawing.Size(1232, 49);
             this.navBar.TabIndex = 7;
             this.navBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NavBar_MouseDown);
             // 
@@ -176,7 +159,7 @@
             this.Loading.AutoSize = true;
             this.Loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loading.ForeColor = System.Drawing.Color.White;
-            this.Loading.Location = new System.Drawing.Point(568, 445);
+            this.Loading.Location = new System.Drawing.Point(1137, 445);
             this.Loading.Name = "Loading";
             this.Loading.Size = new System.Drawing.Size(80, 20);
             this.Loading.TabIndex = 9;
@@ -199,13 +182,30 @@
             this.Input.WordWrap = false;
             this.Input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Input_KeyDown);
             // 
+            // Output
+            // 
+            this.Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.Output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Output.CausesValidation = false;
+            this.Output.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Output.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
+            this.Output.Location = new System.Drawing.Point(572, 56);
+            this.Output.Margin = new System.Windows.Forms.Padding(4);
+            this.Output.Name = "Output";
+            this.Output.ReadOnly = true;
+            this.Output.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.Output.ShortcutsEnabled = false;
+            this.Output.Size = new System.Drawing.Size(644, 350);
+            this.Output.TabIndex = 2;
+            this.Output.TabStop = false;
+            this.Output.Text = "";
+            // 
             // DesktopWaifu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1229, 474);
+            this.ClientSize = new System.Drawing.Size(1226, 474);
             this.Controls.Add(this.Input);
             this.Controls.Add(this.Loading);
             this.Controls.Add(this.navBar);
@@ -219,6 +219,8 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1226, 474);
+            this.MinimumSize = new System.Drawing.Size(1226, 474);
             this.Name = "DesktopWaifu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Desktop Waifu";
@@ -236,14 +238,15 @@
 
         internal System.Windows.Forms.PictureBox Display;
         internal System.Windows.Forms.Button Submit;
-        internal System.Windows.Forms.RichTextBox Output;
+        //internal System.Windows.Forms.RichTextBox Output;
+        internal global::DesktopWaifu.ExRichTextBox Output;
         internal System.Windows.Forms.Button Previous;
         internal System.Windows.Forms.Button Next;
         internal System.Windows.Forms.Button Save;
         internal System.Windows.Forms.Panel navBar;
         internal System.Windows.Forms.Button minimizeButton;
         internal System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Label Loading;
+        internal System.Windows.Forms.Label Loading;
         internal System.Windows.Forms.RichTextBox Input;
     }
 }

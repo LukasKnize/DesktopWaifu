@@ -56,6 +56,9 @@
     <Compile Include="Cache.cs" />
     <Compile Include="CommandHistory.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="DesktopWaifu.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FileHistory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
