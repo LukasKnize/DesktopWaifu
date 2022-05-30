@@ -10,7 +10,7 @@ using System.Net.Http;
 namespace DesktopWaifu {
     internal class CacheSystem {
 
-        static internal string cache = "./bin/cache/";
+        static internal string cache = "./cache/";
 
         static internal Img Cache(string url) {
             var split = url.Split('/');

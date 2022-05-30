@@ -17,3 +17,9 @@ C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\Des
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\Newtonsoft.Json.dll
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\Newtonsoft.Json.xml
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.DesktopWaifu.resources
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\System.Memory.dll
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\System.Text.Json.dll
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\System.Buffers.dll
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\System.Text.Encodings.Web.dll
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Release\DesktopWaifu\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Release\DesktopWaifu.exe.config

@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
+        "projectName": "DesktopWaifu",
+        "projectPath": "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
+        "packagesPath": "C:\\Users\\vasik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vasik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

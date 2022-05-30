@@ -5,7 +5,6 @@ C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\DesktopWaifu.exe.confi
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\DesktopWaifu.exe
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\DesktopWaifu.pdb
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\Newtonsoft.Json.dll
-C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\bin\Debug\Newtonsoft.Json.xml
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.Properties.Resources.resources
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.CoreCompileInputs.cache
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.CopyComplete
