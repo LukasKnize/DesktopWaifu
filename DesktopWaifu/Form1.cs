@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 
 namespace DesktopWaifu {
     public partial class DesktopWaifu : Form {
+        private string url = "";
         public DesktopWaifu() {
             InitializeComponent();
         }
@@ -110,19 +111,20 @@ namespace DesktopWaifu {
             string[] Tags2 = { "uniform", "maid", "marin-kitagawa", "mori-calliope", "raiden-shogun", "oppai", "selfies", "ass", "hentai", "milf", "oral", "paizuri", "ecchi", "ero" };
             string[] songs = { "https://youtu.be/SoKLSIXccgU", "https://youtu.be/1R_PRloutY8", "https://youtu.be/3NLsyjOH92k", "https://youtu.be/DFGJ8PhjrlM", "https://youtu.be/sSfAuBS54s4", "https://youtu.be/yIfkpbMLLsY", "https://youtu.be/i80OHgDwfZI", "https://youtu.be/QkQ5SfZ0YlM", "https://youtu.be/0oMT_6Zu4a4", "https://youtu.be/nCQ_zZIiGLA", "https://youtu.be/EVg8orAhz4g" };
             string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/", "[!]NSFW[!]-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
-            Random randomIndex = new Random();
+            Random rng = new Random();
 
             Output.Text += $"[~] command >> {(command!=""?command:"---")}\n";
 
             if (command == "?") {
-                Output.Text += @"[?] List of commands:
-changeWaifu/category/tag
+                Output.Text += $@"[?] List of commands:
+{'"'}[change] [category] [tag]{'"'}
 ...list of categorys: sfw, nsfw
 ...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe
-list of nsfw tags: waifu, neko, trap
-anime 
-song
-site";
+...list of nsfw tags: waifu, neko, trap, ass, hentai, milf, oral, paizuri, ecchi, ero
+Other Possible Commands:
+{'"'}anime{'"'} - 
+{'"'}song{'"'} - opens a random song on YT in a browser
+{'"'}site{'"'} - gives you a link to a random anime website";
                 Output.Text += "\n";
             }
             else if (args[0] == "change") {
@@ -134,17 +136,20 @@ site";
                 }
             }
             else if (command == "song") {
-                Nullable<int> index = randomIndex.Next(0, songs.Length - 1);
-                System.Diagnostics.Process.Start(songs[index != null ? (int)index : 0]);
+                Nullable<int> index = rng.Next(0, songs.Length - 1);
+                var WeebBrowser = new Weeb_Browser(songs[index != null ? (int)index : 0]);
+                WeebBrowser.Show();
             }
             else if (command == "anime") {
                 var apireturn = Getter.getAnime();
                 Output.Text += apireturn.url + "\n"; //Item1 accessne prvni item v tuplu takze string
                 Output.Text += apireturn.img.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
+                url = apireturn.url;
             }
             else if (command == "site") {
-                Nullable<int> index = randomIndex.Next(0, animeSites.Length - 1);
+                Nullable<int> index = rng.Next(0, animeSites.Length - 1);
                 Output.Text += animeSites[index != null ? (int)index : 0] + "\n";
+                url = animeSites[index != null ? (int)index : 0];
             }
             else if (args[0] == "theme") {
                 //tady se budou volat ty jednotlivé metody ze třídy Themes
@@ -167,5 +172,16 @@ site";
             }
         }
         #endregion
+
+        private void Output_LinkClicked(object sender, LinkClickedEventArgs e) {
+            var result = MessageBox.Show("Do you wish to open the link in a built-in browser? (clicking \"no\" will open it in your normal one", "Open a link?", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes) {
+                var WeebBrowser = new Weeb_Browser(url);
+                WeebBrowser.Show();
+            }
+            else if (result == DialogResult.No) {
+                System.Diagnostics.Process.Start(url);
+            }
+        }
     }
 }

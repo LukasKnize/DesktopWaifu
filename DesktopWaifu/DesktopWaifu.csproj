@@ -105,6 +105,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes.cs" />
     <Compile Include="WaifuImJSONClasses.cs" />
+    <Compile Include="Weeb_Browser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weeb_Browser.Designer.cs">
+      <DependentUpon>Weeb_Browser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Weeb_Browser.resx">
+      <DependentUpon>Weeb_Browser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DesktopWaifu_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

@@ -39,7 +39,7 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.Loading = new System.Windows.Forms.Label();
             this.Input = new System.Windows.Forms.RichTextBox();
-            this.Output = new global::DesktopWaifu.ExRichTextBox();
+            this.Output = new DesktopWaifu.ExRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
@@ -204,6 +204,7 @@
             this.Output.TabIndex = 2;
             this.Output.TabStop = false;
             this.Output.Text = "";
+            this.Output.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.Output_LinkClicked);
             // 
             // DesktopWaifu
             // 
