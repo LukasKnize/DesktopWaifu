@@ -21,11 +21,6 @@ namespace DesktopWaifu {
                 base.WndProc(ref m);
         }
     }
-}
-
-
-
-    /*
     public class Integrity {
         static private string _newtonsoft = "Newtonsoft.Json";
         static private string[] _extensions = { "dll", "xml" };
@@ -38,6 +33,7 @@ namespace DesktopWaifu {
             if (!state) _newtonsoft_donwloader();
         }
         static private void _newtonsoft_donwloader() {
+            // https://stackoverflow.com/a/18764671
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.github.com/JamesNK/Newtonsoft.Json/releases/latest");
             request.MaximumAutomaticRedirections = 4;
             request.MaximumResponseHeadersLength = 4;
@@ -48,14 +44,15 @@ namespace DesktopWaifu {
             string apiContent = readStream.ReadToEnd();
             response.Close();
             readStream.Close();
-            var api = JsonNode.Parse(apiContent).AsObject();
-            var downloadUrl = api["assets"][0]["browser_download_url"].ToString();
+
+            var downloadUrl = "";
+            // "browser_download_url" : ""
+
             Directory.CreateDirectory("tmp");
             (new WebClient()).DownloadFile(downloadUrl, "tmp/json.zip");
-            System.IO.Compression.ZipFile.ExtractToDirectory("tmp/json.zip", "tmp/json");
             foreach (string ext in _extensions) {
                 File.Move($"./tmp/json/Bin/net45/{_newtonsoft}.{ext}", $"./{_newtonsoft}.{ext}");
             }
         }
     }
-    */
+}

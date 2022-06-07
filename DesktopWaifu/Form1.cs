@@ -11,38 +11,32 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace DesktopWaifu
-{
-    public partial class DesktopWaifu : Form
-    {
-        public DesktopWaifu()
-        {
+namespace DesktopWaifu {
+    public partial class DesktopWaifu : Form {
+        public DesktopWaifu() {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Loading.Visible= false;
+        private void Form1_Load(object sender, EventArgs e) {
+            Loading.Visible = false;
             Common.ImgHistory._btn_disable(Next);
             CacheSystem.init();
             Common.theme_manager.Init(this, this.Controls, closeButton, minimizeButton);
-            getWaifu("sfw/waifu");
+            getWaifu(false, "waifu");
             Input.Focus();
         }
 
-        private void Submit_Click(object sender, EventArgs e)
-        {
+        private void Submit_Click(object sender, EventArgs e) {
             string command = Input.Text; //kamo tohle jako se da dat do jednoho posraneho radku.
             if (command != "") executeCommand(command);
         }
 
-        private void getWaifu(string parameters)
-        {
+        private void getWaifu(bool nsfw, string tag, bool sw_tch = false) {
             //TextField.Text += TextField.Text.Length == 0 ? "" : "Loading";
             Loading.Visible = true;
             this.Refresh();
             Cursor.Current = Cursors.WaitCursor;
-            string img_url = Getter.getWaifu(parameters);
+            string img_url = sw_tch ? Getter.getWaifu2(nsfw, tag) : Getter.getWaifu(nsfw, tag);
             Common.ImgHistory.Add(img_url);
             Display.Load(Common.ImgHistory.Current.path);
             //TextField.Text += TextField.Text.Length == 0 ? "" : ", Done\n";
@@ -50,37 +44,27 @@ namespace DesktopWaifu
             this.Refresh();
             Cursor.Current = Cursors.Default;
         }
-        private void getAnime()
-        {
-            var apireturn = Getter.getAnime();
-            Output.Text += apireturn.Item1 + "\n"; //Item1 accessne prvni item v tuplu takze string
-            Output.Text += apireturn.Item2.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
-
-        }
-        private void Input_KeyDown(object sender, KeyEventArgs e)
-        {
+        private void Input_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Down && e.KeyCode != Keys.Up) return;
             /* Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju */
             if (e.KeyCode == Keys.Up) {
                 Input.Text = Common.CmdHistory.Prev();
-                Input.SelectionStart = Input.Text.Length+1;
+                Input.SelectionStart = Input.Text.Length + 1;
                 return;
             }
             else if (e.KeyCode == Keys.Down) {
                 Input.Text = Common.CmdHistory.Next();
-                Input.SelectionStart = Input.Text.Length+1;
+                Input.SelectionStart = Input.Text.Length + 1;
                 return;
             }
-            string command = Input.Text; //stejne tady. Jako what the fuck are you doing, guys?
+            string command = Input.Text; //stejne tady. Jako what the fuck are you doing, guys? What's wrong with that?
             Input.Text = "";
             if (command != "" || command != " ") executeCommand(command);
         }
-        private void Previous_Click(object sender, EventArgs e)
-        {
+        private void Previous_Click(object sender, EventArgs e) {
             Display.Load(Common.ImgHistory.Prev().path);
         }
-        private void Next_Click(object sender, EventArgs e)
-        {
+        private void Next_Click(object sender, EventArgs e) {
             Display.Load(Common.ImgHistory.Next().path);
         }
 
@@ -88,13 +72,11 @@ namespace DesktopWaifu
             CacheSystem.Save(Common.ImgHistory.Current);
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
-        {
+        private void closeButton_Click(object sender, EventArgs e) {
             this.Close();
         }
 
-        private void MinimizeButton_Click(object sender, EventArgs e)
-        {
+        private void MinimizeButton_Click(object sender, EventArgs e) {
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -108,10 +90,8 @@ namespace DesktopWaifu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void NavBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
+        private void NavBar_MouseDown(object sender, MouseEventArgs e) {
+            if (e.Button == MouseButtons.Left) {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
@@ -125,59 +105,64 @@ namespace DesktopWaifu
         private void executeCommand(string command) {
             if (Output.Text.Split('\n').Length > 22) Output.Text = "";
             Common.CmdHistory.Add(command);
-            Output.Text += command + "\n";
-            string[] splitedCommand = command.Split('/');
-            string[] sfwTags = { "waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "kiss", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe" };
-            string[] nsfwTags = { "waifu", "neko", "trap" };
+            string[] args = command.Split(new char[] { '/', ' ' , '.'});
+            string[] Tags1 = { "waifu", "neko", "shinobu", "trap", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "kiss", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe" };
+            string[] Tags2 = { "uniform", "maid", "marin-kitagawa", "mori-calliope", "raiden-shogun", "oppai", "selfies", "ass", "hentai", "milf", "oral", "paizuri", "ecchi", "ero" };
             string[] songs = { "https://youtu.be/SoKLSIXccgU", "https://youtu.be/1R_PRloutY8", "https://youtu.be/3NLsyjOH92k", "https://youtu.be/DFGJ8PhjrlM", "https://youtu.be/sSfAuBS54s4", "https://youtu.be/yIfkpbMLLsY", "https://youtu.be/i80OHgDwfZI", "https://youtu.be/QkQ5SfZ0YlM", "https://youtu.be/0oMT_6Zu4a4", "https://youtu.be/nCQ_zZIiGLA", "https://youtu.be/EVg8orAhz4g" };
-            string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/", "NSFW!!-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
+            string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/", "[!]NSFW[!]-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
             Random randomIndex = new Random();
-            //Common.past_commands.Add(command); Tohle bylo na predchozi prikazy ale moc to nefunguje takze to jenom zakomentuju
 
+            Output.Text += $"[~] command >> {(command!=""?command:"---")}\n";
 
             if (command == "?") {
-                Output.Text += "List of commands: \n #changeWaifu/category/tag \n ...list of categorys: sfw, nsfw \n ...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe \n list of nsfw tags: waifu, neko, trap \n #anime \n #song \n #site";
+                Output.Text += @"[?] List of commands:
+changeWaifu/category/tag
+...list of categorys: sfw, nsfw
+...list of sfw tags: waifu, neko, shinobu, megumin, bully, cuddle, cry, hug, awoo, kiss, lick, pat, smug, bonk, yeet, blush, smile, wave, highfive, handhold, nom, bite, glomp, slap, kill, kick, happy, wink, poke, dance, cringe
+list of nsfw tags: waifu, neko, trap
+anime 
+song
+site";
                 Output.Text += "\n";
             }
-            else if (splitedCommand[0] == "#changeWaifu") {
-                if (splitedCommand[1] == "sfw" && sfwTags.Contains(splitedCommand[2])) {
-                    getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
-                }
-                else if (splitedCommand[1] == "nsfw" && nsfwTags.Contains(splitedCommand[2])) {
-                    getWaifu(splitedCommand[1] + "/" + splitedCommand[2]);
+            else if (args[0] == "change") {
+                if (Tags1.Contains(args[2]) || Tags2.Contains(args[2])) {
+                    getWaifu(args[1] == "nsfw", args[2], Tags2.Contains(args[2]));
                 }
                 else {
-                    Output.Text += "invalid command, try ?" + "\n";
+                    Output.Text += "[!] Invalid command, try ?\n";
                 }
             }
-            else if (command == "#song") {
+            else if (command == "song") {
                 Nullable<int> index = randomIndex.Next(0, songs.Length - 1);
                 System.Diagnostics.Process.Start(songs[index != null ? (int)index : 0]);
             }
-            else if (command == "#anime") {
-                getAnime();
+            else if (command == "anime") {
+                var apireturn = Getter.getAnime();
+                Output.Text += apireturn.url + "\n"; //Item1 accessne prvni item v tuplu takze string
+                Output.Text += apireturn.img.ToString(); //Item2 accessne druhy item a Item3 by accessnul treti item a tak dale.
             }
-            else if (command == "#site") {
+            else if (command == "site") {
                 Nullable<int> index = randomIndex.Next(0, animeSites.Length - 1);
                 Output.Text += animeSites[index != null ? (int)index : 0] + "\n";
             }
-            else if (splitedCommand[0] == "#theme") {
+            else if (args[0] == "theme") {
                 //tady se budou volat ty jednotlivé metody ze třídy Themes
-                if (splitedCommand[1] == "dark") {
+                if (args[1] == "dark") {
                     Common.theme_manager.Dark();
                 }
-                else if (splitedCommand[1] == "light") {
+                else if (args[1] == "light") {
                     Common.theme_manager.Light();
                 }
-                else if (splitedCommand[1] == "pink") {
+                else if (args[1] == "pink") {
                     Common.theme_manager.Pink();
                 }
                 else {
-                    Output.Text += "invalid command, try ?" + "\n";
+                    Output.Text += "[!] Invalid command, try ?\n";
                 }
             }
             else {
-                Output.Text += "invalid command, try ?" + "\n";
+                Output.Text += "[!] Invalid command, try ?\n";
 
             }
         }
