@@ -39,7 +39,7 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.Loading = new System.Windows.Forms.Label();
             this.Input = new System.Windows.Forms.RichTextBox();
-            this.Output = new DesktopWaifu.ExRichTextBox();
+            this.Output = new ExRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
             this.navBar.SuspendLayout();
             this.SuspendLayout();

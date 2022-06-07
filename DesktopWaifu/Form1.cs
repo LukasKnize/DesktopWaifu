@@ -137,8 +137,7 @@ Other Possible Commands:
             }
             else if (command == "song") {
                 Nullable<int> index = rng.Next(0, songs.Length - 1);
-                var WeebBrowser = new Weeb_Browser(songs[index != null ? (int)index : 0]);
-                WeebBrowser.Show();
+                System.Diagnostics.Process.Start("\""+songs[index != null ? (int)index : 0]+"\"");
             }
             else if (command == "anime") {
                 var apireturn = Getter.getAnime();
@@ -174,13 +173,9 @@ Other Possible Commands:
         #endregion
 
         private void Output_LinkClicked(object sender, LinkClickedEventArgs e) {
-            var result = MessageBox.Show("Do you wish to open the link in a built-in browser? (clicking \"no\" will open it in your normal one", "Open a link?", MessageBoxButtons.YesNoCancel);
+            var result = MessageBox.Show("Do you wish to open the link in a browser?", "Open a link?", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes) {
-                var WeebBrowser = new Weeb_Browser(url);
-                WeebBrowser.Show();
-            }
-            else if (result == DialogResult.No) {
-                System.Diagnostics.Process.Start(url);
+                System.Diagnostics.Process.Start(url);   
             }
         }
     }
