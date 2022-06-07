@@ -113,7 +113,7 @@ namespace DesktopWaifu {
             string[] animeSites = { "4Anime: https://4anime.gg/", "Crunchyroll: https://www.crunchyroll.com/", "[!]NSFW[!]-HeantaiHaven: https://hentaihaven.xxx", "9anime : https://9anime.to/" };
             Random rng = new Random();
 
-            Output.Text += $"[~] command >> {(command!=""?command:"---")}\n";
+            Output.Text += $"[~] command >> {(command.Trim().ToLower()!=""?command:"---")}\n";
 
             if (command == "?") {
                 Output.Text += $@"[?] List of commands:
