@@ -25,4 +25,3 @@ C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\bin\Debug\Newto
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.csproj.CopyComplete
 C:\Users\helio\source\repos\LukasKnize\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.DesktopWaifu.resources
 C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.DesktopWaifu.resources
-C:\Users\vasik\GITHUB\DesktopWaifu\DesktopWaifu\obj\Debug\DesktopWaifu.Weeb_Browser.resources

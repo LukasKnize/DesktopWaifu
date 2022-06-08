@@ -13,7 +13,10 @@ using Newtonsoft.Json;
 
 namespace DesktopWaifu {
     internal class Getter {
-        static internal string getWaifu(bool nsfw, string tag) {
+        static internal string[] nsfw_tags = new string[] { "n_waifu", "n_neko", "trap", "ass", "hentai", "milf", "oral", "paizuri", "ecchi", "ero" };
+        static internal string getWaifu(string tag) {
+            bool nsfw = false;
+            if (nsfw_tags.Contains(tag)) nsfw = true;
             string apiContent;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.waifu.pics/" + (nsfw ? "nsfw" : "sfw") + $"/{tag}");
 
@@ -42,7 +45,9 @@ namespace DesktopWaifu {
         //https://api.waifu.im/random/?is_nsfw=false&selected_tags=maid&full=false
 
         //další api 
-        static internal string getWaifu2(bool nsfw, string tag) {
+        static internal string getWaifu2(string tag) {
+            bool nsfw = false;
+            if (nsfw_tags.Contains(tag)) nsfw = true;
             string apiContent;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.waifu.im/random/?is_nsfw=" + nsfw + "&selected_tags=" + tag + "&full=false");
 
