@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {}
+    "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {
+    "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
+        "projectUniqueName": "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
         "projectName": "DesktopWaifu",
-        "projectPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
-        "packagesPath": "C:\\Users\\knize.lu.2019\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu\\DesktopWaifu\\obj\\",
+        "projectPath": "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
+        "packagesPath": "C:\\Users\\helio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\knize.lu.2019\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\helio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net461"

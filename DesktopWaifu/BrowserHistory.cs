@@ -8,45 +8,22 @@ namespace DesktopWaifu
 {
     class BrowserHistory
     {
-        private string[] history = new string[10];
-        private int historyIndex = 0;
-        private int currentHistoryIndex = 0;
-
-        public void AddToHistory(string link)
-        {
-            if(historyIndex < 10)
-            {
-                history[historyIndex] = link;
-                historyIndex++;
-                currentHistoryIndex = historyIndex;
-            }
-            else
-            {
-                string[] oldHistory = history;
-                for (int i = 0; i < 9; i++)
-                {
-                    history[i] = oldHistory[i + 1];
-                }
-                history[9] = link;
-            }
+        private History<string> _history;
+        public BrowserHistory(int maxItems) {
+            _history = new History<string>(maxItems);
         }
-
-        public string StepBack()
-        {
-            return history[currentHistoryIndex - 2];
+        internal string Current { get { return _history.Current; } }
+        internal List<string> ToList() { return _history.ToList(); }
+        internal string Prev() {
+            (bool _, string address) response = _history.Prev();
+            return response.address;
         }
-
-        public string FullHistory()
-        {
-            string fullHist = "";
-            for (int i = 0; i < 10; i++)
-            {
-                fullHist += history[i];
-                fullHist += " /n";
-            }
-
-            return fullHist;
+        internal string Next() {
+            (bool _, string address) response = _history.Next();
+            return response.address;
         }
-
+        internal void Add(string command) {
+            _history.Add(command, out _);
+        }
     }
 }

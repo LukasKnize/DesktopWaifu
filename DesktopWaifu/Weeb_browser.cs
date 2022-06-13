@@ -14,17 +14,17 @@ namespace DesktopWaifu
 {
     public partial class Weeb_browser : Form
     {
-        private string adress;
-        private static BrowserHistory WeebBrowserHistory = new BrowserHistory();
-        public Weeb_browser(string urlAdress)
+        private string address;
+        private BrowserHistory _history = new BrowserHistory(10);
+        public Weeb_browser(string url_address)
         {
             InitializeComponent();
-            adress = urlAdress;
+            address = url_address;
         }
 
         private void Weeb_browser_Load(object sender, EventArgs e)
         {
-            chromiumWebBrowser1.LoadUrl(adress);
+            WebBrowser.LoadUrl(address);
         }
 
         private void ChromiumWebBrowser1_LoadingStateChanged(object sender, LoadingStateChangedEventArgs e)
@@ -44,39 +44,42 @@ namespace DesktopWaifu
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            chromiumWebBrowser1.LoadUrl(URLInput.Text);
+            WebBrowser.LoadUrl(URLInput.Text);
         }
 
         private void URLInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                chromiumWebBrowser1.LoadUrl(URLInput.Text);
+                WebBrowser.LoadUrl(URLInput.Text);
             }
         }
 
         private void ChromiumWebBrowser1_AddressChanged(object sender, AddressChangedEventArgs e)
         {
-            adress = e.Address;
+            /*
+            address = e.Address;
             if (URLInput.InvokeRequired)
             {
-                URLInput.Invoke(new MethodInvoker(delegate { URLInput.Text = adress; }));
+                URLInput.Invoke(new MethodInvoker(delegate { URLInput.Text = address; }));
             }
-            WeebBrowserHistory.AddToHistory(adress);
+            _history.Add(address);
             //ChangeURLText();
-            //Nevím jak toto vyřešit
+            //Nevím jak toto vyřešit */
         }
 
         private void ChangeURLText()
         {
-            URLInput.Text = adress;
+            URLInput.Text = address;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            string backAdress = WeebBrowserHistory.StepBack();
-            richTextBox1.Text = WeebBrowserHistory.FullHistory();
-            chromiumWebBrowser1.LoadUrl(backAdress);
+            if (WebBrowser.CanGoBack) WebBrowser.Back();
+        }
+
+        private void Next_Click(object sender, EventArgs e) {
+            if (WebBrowser.CanGoForward) WebBrowser.Forward();
         }
     }
 }

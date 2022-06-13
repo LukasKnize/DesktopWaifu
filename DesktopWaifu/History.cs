@@ -23,6 +23,7 @@ namespace DesktopWaifu {
         internal int Count { get { return _history.Count; } }
         internal T First { get { return _history[0]; } }
         internal T Last { get { return _history[_history.Count-1]; } }
+        internal List<T> ToList() { return _history; }
         internal (bool,T) Next() {
             if (_history.Count <= 0) return (false, default(T));
             if (_curr >= _history.Count-1) return (false, _history[_curr]);
