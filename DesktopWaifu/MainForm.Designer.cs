@@ -40,16 +40,16 @@
             this.Loading = new System.Windows.Forms.Label();
             this.Input = new System.Windows.Forms.RichTextBox();
             this.Output = new DesktopWaifu.ExRichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Display
             // 
-            this.Display.Location = new System.Drawing.Point(16, 55);
-            this.Display.Margin = new System.Windows.Forms.Padding(4);
+            this.Display.Location = new System.Drawing.Point(12, 45);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(499, 350);
+            this.Display.Size = new System.Drawing.Size(374, 284);
             this.Display.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Display.TabIndex = 0;
             this.Display.TabStop = false;
@@ -62,10 +62,9 @@
             this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Submit.Location = new System.Drawing.Point(1096, 411);
-            this.Submit.Margin = new System.Windows.Forms.Padding(4);
+            this.Submit.Location = new System.Drawing.Point(822, 334);
             this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(120, 30);
+            this.Submit.Size = new System.Drawing.Size(90, 24);
             this.Submit.TabIndex = 1;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = false;
@@ -78,10 +77,10 @@
             this.Previous.FlatAppearance.BorderSize = 0;
             this.Previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Previous.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Previous.Location = new System.Drawing.Point(16, 411);
-            this.Previous.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Previous.Location = new System.Drawing.Point(12, 334);
+            this.Previous.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Previous.Name = "Previous";
-            this.Previous.Size = new System.Drawing.Size(165, 31);
+            this.Previous.Size = new System.Drawing.Size(124, 25);
             this.Previous.TabIndex = 2;
             this.Previous.Text = "<";
             this.Previous.UseVisualStyleBackColor = false;
@@ -94,10 +93,10 @@
             this.Next.FlatAppearance.BorderSize = 0;
             this.Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Next.Location = new System.Drawing.Point(349, 411);
-            this.Next.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Next.Location = new System.Drawing.Point(262, 334);
+            this.Next.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(165, 31);
+            this.Next.Size = new System.Drawing.Size(124, 25);
             this.Next.TabIndex = 4;
             this.Next.Text = ">";
             this.Next.UseVisualStyleBackColor = false;
@@ -110,10 +109,10 @@
             this.Save.FlatAppearance.BorderSize = 0;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Save.Location = new System.Drawing.Point(204, 411);
-            this.Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Save.Location = new System.Drawing.Point(153, 334);
+            this.Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(123, 31);
+            this.Save.Size = new System.Drawing.Size(92, 25);
             this.Save.TabIndex = 3;
             this.Save.Text = "save image";
             this.Save.UseVisualStyleBackColor = false;
@@ -122,12 +121,12 @@
             // navBar
             // 
             this.navBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.navBar.Controls.Add(this.button1);
             this.navBar.Controls.Add(this.minimizeButton);
             this.navBar.Controls.Add(this.closeButton);
             this.navBar.Location = new System.Drawing.Point(0, -1);
-            this.navBar.Margin = new System.Windows.Forms.Padding(4);
             this.navBar.Name = "navBar";
-            this.navBar.Size = new System.Drawing.Size(1232, 49);
+            this.navBar.Size = new System.Drawing.Size(924, 40);
             this.navBar.TabIndex = 7;
             this.navBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NavBar_MouseDown);
             // 
@@ -137,10 +136,9 @@
             this.minimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Location = new System.Drawing.Point(1160, 16);
-            this.minimizeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.minimizeButton.Location = new System.Drawing.Point(870, 13);
             this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(23, 21);
+            this.minimizeButton.Size = new System.Drawing.Size(17, 17);
             this.minimizeButton.TabIndex = 5;
             this.minimizeButton.UseVisualStyleBackColor = false;
             this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
@@ -151,10 +149,9 @@
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(1191, 16);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.closeButton.Location = new System.Drawing.Point(893, 13);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(23, 21);
+            this.closeButton.Size = new System.Drawing.Size(17, 17);
             this.closeButton.TabIndex = 6;
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
@@ -164,9 +161,10 @@
             this.Loading.AutoSize = true;
             this.Loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loading.ForeColor = System.Drawing.Color.White;
-            this.Loading.Location = new System.Drawing.Point(1137, 445);
+            this.Loading.Location = new System.Drawing.Point(853, 362);
+            this.Loading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Loading.Name = "Loading";
-            this.Loading.Size = new System.Drawing.Size(80, 20);
+            this.Loading.Size = new System.Drawing.Size(71, 17);
             this.Loading.TabIndex = 9;
             this.Loading.Text = "Loading...";
             // 
@@ -176,12 +174,13 @@
             this.Input.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Input.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Input.Location = new System.Drawing.Point(572, 411);
+            this.Input.Location = new System.Drawing.Point(429, 334);
+            this.Input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Input.MaxLength = 150;
             this.Input.Multiline = false;
             this.Input.Name = "Input";
             this.Input.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.Input.Size = new System.Drawing.Size(517, 30);
+            this.Input.Size = new System.Drawing.Size(388, 24);
             this.Input.TabIndex = 0;
             this.Input.Text = "";
             this.Input.WordWrap = false;
@@ -194,24 +193,33 @@
             this.Output.CausesValidation = false;
             this.Output.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Output.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(227)))), ((int)(((byte)(230)))));
-            this.Output.Location = new System.Drawing.Point(572, 56);
-            this.Output.Margin = new System.Windows.Forms.Padding(4);
+            this.Output.Location = new System.Drawing.Point(429, 46);
             this.Output.Name = "Output";
             this.Output.ReadOnly = true;
             this.Output.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.Output.ShortcutsEnabled = false;
-            this.Output.Size = new System.Drawing.Size(644, 350);
+            this.Output.Size = new System.Drawing.Size(483, 284);
             this.Output.TabIndex = 2;
             this.Output.TabStop = false;
             this.Output.Text = "";
             this.Output.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.Output_LinkClicked);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(448, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 26);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "weeb browser";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // DesktopWaifu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1226, 474);
+            this.ClientSize = new System.Drawing.Size(920, 385);
             this.Controls.Add(this.Input);
             this.Controls.Add(this.Loading);
             this.Controls.Add(this.navBar);
@@ -224,7 +232,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DesktopWaifu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Desktop Waifu";
@@ -252,6 +259,7 @@
         internal System.Windows.Forms.Button closeButton;
         internal System.Windows.Forms.Label Loading;
         internal System.Windows.Forms.RichTextBox Input;
+        private System.Windows.Forms.Button button1;
     }
 }
 
