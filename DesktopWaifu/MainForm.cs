@@ -165,5 +165,10 @@ namespace DesktopWaifu {
                 System.Diagnostics.Process.Start(url);   
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            (new Weeb_browser("https://github.com/")).Show();
+        }
     }
 }
