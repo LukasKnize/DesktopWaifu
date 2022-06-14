@@ -48,7 +48,8 @@ Other Possible Commands:
                 }
                 else if (command == "song") {
                     Nullable<int> index = rng.Next(0, songs.Length - 1);
-                    System.Diagnostics.Process.Start("\"" + songs[index != null ? (int)index : 0] + "\"");
+                (new Weeb_browser(songs[index != null ? (int)index : 0])).Show();
+                //System.Diagnostics.Process.Start("\"" + songs[index != null ? (int)index : 0] + "\"");
                 }
                 else if (command == "anime") {
                     var apireturn = Getter.getAnime();

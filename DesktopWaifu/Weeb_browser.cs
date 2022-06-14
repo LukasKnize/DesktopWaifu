@@ -57,7 +57,7 @@ namespace DesktopWaifu
 
         private void ChromiumWebBrowser1_AddressChanged(object sender, AddressChangedEventArgs e)
         {
-            /*
+            
             address = e.Address;
             if (URLInput.InvokeRequired)
             {
@@ -65,7 +65,7 @@ namespace DesktopWaifu
             }
             _history.Add(address);
             //ChangeURLText();
-            //Nevím jak toto vyřešit */
+            //Nevím jak toto vyřešit 
         }
 
         private void ChangeURLText()
@@ -78,8 +78,40 @@ namespace DesktopWaifu
             if (WebBrowser.CanGoBack) WebBrowser.Back();
         }
 
-        private void Next_Click(object sender, EventArgs e) {
+        private void Next_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Next_Click_1(object sender, EventArgs e)
+        {
             if (WebBrowser.CanGoForward) WebBrowser.Forward();
+        }
+
+        private void MaximizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void DevTools_Click(object sender, EventArgs e)
+        {
+            WebBrowser.ShowDevTools();
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void NavBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

@@ -1,42 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {}
+    "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {
+    "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
+        "projectUniqueName": "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
         "projectName": "DesktopWaifu",
-        "projectPath": "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
-        "packagesPath": "C:\\Users\\helio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helio\\source\\repos\\LukasKnize\\DesktopWaifu\\DesktopWaifu\\obj\\",
+        "projectPath": "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\DesktopWaifu.csproj",
+        "packagesPath": "C:\\Users\\vasik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasik\\GITHUB\\DesktopWaifu\\DesktopWaifu\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\helio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vasik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net461"
+          "net48"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net461": {
+          "net48": {
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
-        "net461": {
+        "net48": {
           "dependencies": {
             "CefSharp.WinForms": {
               "target": "Package",

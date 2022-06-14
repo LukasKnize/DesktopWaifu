@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>DesktopWaifu</RootNamespace>
     <AssemblyName>DesktopWaifu</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -146,6 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Resources\tools-fill.png" />
+    <Content Include="Resources\search-line.png" />
+    <Content Include="Resources\search-fill.png" />
+    <Content Include="Resources\arrow-go-forward-fill.png" />
+    <Content Include="Resources\arrow-go-back-fill1.png" />
+    <Content Include="Resources\arrow-go-back-fill.png" />
     <None Include="Resources\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
