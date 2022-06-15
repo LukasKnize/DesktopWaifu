@@ -15,7 +15,7 @@ namespace DesktopWaifu {
     internal class CommandExecution {
         static private Random rng = new Random();
         static internal void Execute(string command, ref string url) {
-                if (Program.form.Output.Text.Split('\n').Length > 22) Program.form.Output.Text = "";
+                //if (Program.form.Output.Text.Split('\n').Length > 22) Program.form.Output.Text = "";
                 command = command.Trim().ToLower();
                 Program.form.Output.Text += $"[~] command >> {(command != "" ? command : "---")}\n";
                 Common.CmdHistory.Add(command);

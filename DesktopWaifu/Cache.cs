@@ -10,7 +10,7 @@ using System.Net.Http;
 namespace DesktopWaifu {
     internal class CacheSystem {
 
-        static internal string cache = "./cache/";
+        static internal string cache = "./$DesktopWaifu.Cache/";
 
         static internal Img Cache(string url) {
             var split = url.Split('/');
@@ -28,7 +28,7 @@ namespace DesktopWaifu {
                     File.Delete(file);
                 }
             }
-            else Directory.CreateDirectory(cache);
+            else Directory.CreateDirectory(cache).Attributes |= FileAttributes.Hidden; //create a directory with the path {cache} and add the hidden attribute
         }
 
         static private void download(string url, string filename) { //https://stackoverflow.com/a/71949994
