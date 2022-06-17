@@ -22,7 +22,7 @@ DesktopWaifu is awesome open-source project that brings your waifu closer to you
 Download from web site will be added soon.
 
 ## List of commands that your waifu will understand
-the command is inside " " but " isn't part of the command (for example if there is "command1" than you should use only command1, not "command1") 
+the command is inside " " but " isn't part of the command (for example if there is "command" than you should only type command, not "command") 
 
 1. "?" - this command will return list of all commands
 2. "#changeWaifu" - this command will take two parameters in following format #changeWaifu/category/tag
@@ -32,7 +32,7 @@ the command is inside " " but " isn't part of the command (for example if there 
 4. "#song" - this command will play random song, recommended by your waifu, in your browser
 5. "#site" - this command will recommend you random anime streaming website
 6. "#theme" - this command will take one parameter in following format #theme/type
-    - list of types: dark, light
+    - list of types: dark, light, pink (warning, pink has a tendency to cause severe eye damage)
 
 You can also go back in history and download your waifu
 
@@ -47,7 +47,7 @@ You can also go back in history and download your waifu
 
 > Where are the images stored?
 
-*We are using waifu.pics api*
+*We are using waifu.pics api and are temporarly cached on the harddrive*
 
 > Is this a virus? 
 
