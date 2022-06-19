@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New tab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <header>
+        <img src="grid-fill.png" onclick="openSavedLinks()" alt="">
+    </header>
+
+<div class="savedLinks">
+  <div class="savedLinksHeader">
+    <p>saved Links</p>
+    <button onclick="openAddLink()">+</button>
+  </div>
+  <div class="links">
+  </div>
+</div>
+    <div class="searchBarContainer">
+      <a href="https://duckduckgo.com/"> <img src="DDG-icon_256x256.png" alt="DuckDuckGo"> </a> 
+      <form onSubmit="return searchb()" id="search_form_homepage" class="no-menu" name="x" action="https://duckduckgo.com/" target="_top">	
+        <div id="sxd"></div>
+        <div id="search_wrapper_homepage">
+            <input id="search_button_homepage" type="submit" value=""/>
+        </div>
+        <input type="text" autocomplete="off" name="q" id="search_form_input_homepage" onFocus="if ('rc' in window) {nua('nro',rc)};fq=1;" onBlur="fq=0" onclick="if (this.value=='put search terms here') {this.value='';this.style.color='#000000';}" value="" placeholder="Search DuckDuckGo" />
+
+    <script type="text/javascript">
+    var tracking=new RegExp('[\?\&]t=([^\&]+)');
+    var form = document.getElementById("search_form_homepage");
+    
+    if (tracking.test(window.location.href)) {
+      var input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "t";
+      input.value = RegExp.$1;
+      form.appendChild(input);
+    }
+    var karr = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','aa','ab','ac','ad','ae','af','ag','ah','ai','aj','ak','al','am','an','ao','ap','aq','ar','as','at','au','av','aw','ax','ay','az');
+    for (var i=0;i<karr.length;i++) {
+      var kre=new RegExp('[\?\&]k'+karr[i]+'=([^\&]+)');
+      var ktmp='';
+      if (kre.test(window.location.href)) {
+        ktmp=decodeURIComponent(RegExp.$1);
+        if (ktmp.length<11) {
+          var input = document.createElement("input");
+          input.type = "hidden";
+          input.name = "k" + karr[i];
+          input.value = ktmp;
+          form.appendChild(input);
+        }
+        if (karr[i]=='n'&&ktmp&&ktmp=='1') document.x.target='_new';		       
+      }
+    }
+    </script>
+    </form>
+    <div class="appBar">
+      <a href="https://myanimelist.net/" class="sideBarLink">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://myanimelist.net&size=128" alt="">
+      </a>
+      <a href="https://www.crunchyroll.com/" class="sideBarLink">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://crunchyroll.com&size=128" alt="">
+      </a>
+      <a href="https://www.youtube.com/" class="sideBarLink">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://youtube.com&size=128" alt="">
+      </a>
+      <a href="https://discord.com" class="sideBarLink">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://discord.com&size=128" alt="">
+      </a>
+  </div>
+    </div>
+    <footer>
+        <p>©weeb Corporation - <span id="year">2022</span></p>
+        <p>Search engine by DuckDuckGo and Images from waifu.pics</p>
+    </footer>
+
+    <div class="addAdressContainer">
+      <p>Save new link</p>
+
+      <form>
+        <label for="url" id="urlLabel">input url in folowing format: https://example.com/ or http://example.com/ (it is important that the url starts with http or https)</label>
+        <input type="text" name="url" id="urlInput" placeholder="https://example.com">
+        <br>
+        <label for="">Set name that will by displayed with your link</label>
+        <input type="text" placeholder="Name of website" id="nameInput">
+      </form>
+      <div class="buttons">
+        <button onclick="closeAddLink()">Cancel</button>
+        <button onclick="addLink()">Save</button>
+      </div>
+    </div>
+   <script src="script.js"></script>
+   <script src="savedLink.js"></script>
+</body>
+</html>
