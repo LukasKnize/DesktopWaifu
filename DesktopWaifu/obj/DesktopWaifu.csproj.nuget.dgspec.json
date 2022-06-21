@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\DesktopWaifu.csproj": {}
+    "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\DesktopWaifu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\DesktopWaifu.csproj": {
+    "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\DesktopWaifu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\DesktopWaifu.csproj",
+        "projectUniqueName": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\DesktopWaifu.csproj",
         "projectName": "DesktopWaifu",
-        "projectPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\DesktopWaifu.csproj",
+        "projectPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\DesktopWaifu.csproj",
         "packagesPath": "C:\\Users\\knize.lu.2019\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\obj\\",
+        "outputPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -40,7 +40,7 @@
           "dependencies": {
             "CefSharp.WinForms": {
               "target": "Package",
-              "version": "[102.0.90, )"
+              "version": "[102.0.100, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

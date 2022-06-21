@@ -2,23 +2,23 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "cef.redist.x64/102.0.9": {
+      "cef.redist.x64/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x64.props": {}
         }
       },
-      "cef.redist.x86/102.0.9": {
+      "cef.redist.x86/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/102.0.90": {
+      "CefSharp.Common/102.0.100": {
         "type": "package",
         "dependencies": {
-          "cef.redist.x64": "[102.0.9]",
-          "cef.redist.x86": "[102.0.9]"
+          "cef.redist.x64": "[102.0.10]",
+          "cef.redist.x86": "[102.0.10]"
         },
         "compile": {
           "lib/net452/CefSharp.Core.dll": {},
@@ -33,10 +33,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/102.0.90": {
+      "CefSharp.WinForms/102.0.100": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[102.0.90]"
+          "CefSharp.Common": "[102.0.100]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -69,23 +69,23 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win": {
-      "cef.redist.x64/102.0.9": {
+      "cef.redist.x64/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x64.props": {}
         }
       },
-      "cef.redist.x86/102.0.9": {
+      "cef.redist.x86/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/102.0.90": {
+      "CefSharp.Common/102.0.100": {
         "type": "package",
         "dependencies": {
-          "cef.redist.x64": "[102.0.9]",
-          "cef.redist.x86": "[102.0.9]"
+          "cef.redist.x64": "[102.0.10]",
+          "cef.redist.x86": "[102.0.10]"
         },
         "compile": {
           "lib/net452/CefSharp.Core.dll": {},
@@ -100,10 +100,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/102.0.90": {
+      "CefSharp.WinForms/102.0.100": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[102.0.90]"
+          "CefSharp.Common": "[102.0.100]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -136,23 +136,23 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
-      "cef.redist.x64/102.0.9": {
+      "cef.redist.x64/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x64.props": {}
         }
       },
-      "cef.redist.x86/102.0.9": {
+      "cef.redist.x86/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/102.0.90": {
+      "CefSharp.Common/102.0.100": {
         "type": "package",
         "dependencies": {
-          "cef.redist.x64": "[102.0.9]",
-          "cef.redist.x86": "[102.0.9]"
+          "cef.redist.x64": "[102.0.10]",
+          "cef.redist.x86": "[102.0.10]"
         },
         "compile": {
           "lib/net452/CefSharp.Core.dll": {},
@@ -167,10 +167,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/102.0.90": {
+      "CefSharp.WinForms/102.0.100": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[102.0.90]"
+          "CefSharp.Common": "[102.0.100]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -203,23 +203,23 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x86": {
-      "cef.redist.x64/102.0.9": {
+      "cef.redist.x64/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x64.props": {}
         }
       },
-      "cef.redist.x86/102.0.9": {
+      "cef.redist.x86/102.0.10": {
         "type": "package",
         "build": {
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/102.0.90": {
+      "CefSharp.Common/102.0.100": {
         "type": "package",
         "dependencies": {
-          "cef.redist.x64": "[102.0.9]",
-          "cef.redist.x86": "[102.0.9]"
+          "cef.redist.x64": "[102.0.10]",
+          "cef.redist.x86": "[102.0.10]"
         },
         "compile": {
           "lib/net452/CefSharp.Core.dll": {},
@@ -234,10 +234,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/102.0.90": {
+      "CefSharp.WinForms/102.0.100": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[102.0.90]"
+          "CefSharp.Common": "[102.0.100]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -271,10 +271,10 @@
     }
   },
   "libraries": {
-    "cef.redist.x64/102.0.9": {
-      "sha512": "ORJl3pZSPImXucrqPIHeTkUIWaQrJBkjJOaRy5Iq1rkeUamSd1sln+b1vTgkL7ILbUVYHc9kitUAY7kre2Ln0A==",
+    "cef.redist.x64/102.0.10": {
+      "sha512": "3R11n4yJEMre15jbFsIA6+6nlkKn7dFyTzb4ChnBmQfvJMtjxi+Poe8rKM/AL8ro/9MiwW3nr0Tr17Md0CRkmQ==",
       "type": "package",
-      "path": "cef.redist.x64/102.0.9",
+      "path": "cef.redist.x64/102.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -352,14 +352,14 @@
         "LICENSE.txt",
         "build/cef.redist.x64.props",
         "buildTransitive/cef.redist.x64.props",
-        "cef.redist.x64.102.0.9.nupkg.sha512",
+        "cef.redist.x64.102.0.10.nupkg.sha512",
         "cef.redist.x64.nuspec"
       ]
     },
-    "cef.redist.x86/102.0.9": {
-      "sha512": "l9DUK7DgxR02bzmZlbgFG+ImXt26XkYzEZA0E8WOZSK14Fqa4RJrs6UrsdO3E6QJNUWR3rfTHnJ+04JgYQ9Q3A==",
+    "cef.redist.x86/102.0.10": {
+      "sha512": "88NG0+OtDLoIeF2jOWVavfXSfelzQeJICVc6v74BwamWNIBheuJz1OLIQmzm9/xQdSBwVOrgUkH3XOe0TfGhEQ==",
       "type": "package",
-      "path": "cef.redist.x86/102.0.9",
+      "path": "cef.redist.x86/102.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -437,14 +437,14 @@
         "LICENSE.txt",
         "build/cef.redist.x86.props",
         "buildTransitive/cef.redist.x86.props",
-        "cef.redist.x86.102.0.9.nupkg.sha512",
+        "cef.redist.x86.102.0.10.nupkg.sha512",
         "cef.redist.x86.nuspec"
       ]
     },
-    "CefSharp.Common/102.0.90": {
-      "sha512": "3obC9BQgULvXgqQUSJvYWSWAOHR5+82YXZuJZZRjK1W27UxvcVvsdMYME3Kr4JDycd7MuYLGhXXEUwV8qEWwBw==",
+    "CefSharp.Common/102.0.100": {
+      "sha512": "w/3cK7ox0VOE52iD+SP67yL0zbHz8d/GKOAFxVLXzbV+fpoypSuSMInezdYemKSrRDgVQK/LyV//tozvEdaSuw==",
       "type": "package",
-      "path": "cefsharp.common/102.0.90",
+      "path": "cefsharp.common/102.0.100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -468,7 +468,7 @@
         "build/app.config.x86.transform",
         "buildTransitive/CefSharp.Common.props",
         "buildTransitive/CefSharp.Common.targets",
-        "cefsharp.common.102.0.90.nupkg.sha512",
+        "cefsharp.common.102.0.100.nupkg.sha512",
         "cefsharp.common.nuspec",
         "lib/net452/CefSharp.Core.XML",
         "lib/net452/CefSharp.Core.dll",
@@ -986,15 +986,15 @@
         "src/CefSharp/obj/Release/.NETFramework,Version=v4.5.2.AssemblyAttributes.cs"
       ]
     },
-    "CefSharp.WinForms/102.0.90": {
-      "sha512": "+t94yOzbZZ1m2x91C1u8koMOChHodMAqvm/iL/a0JPb67GiopL3fQWlPzda0vA1qa4CBCrYNYzi1dAQhyRY5DQ==",
+    "CefSharp.WinForms/102.0.100": {
+      "sha512": "+y0cxFoKBQBhpUNky58kAc9MWKQgZLIJLGn3ObmBcB6YuIsILu8rdFnHEwuV691ygQyFR03sLbda8BXwo5ZYVw==",
       "type": "package",
-      "path": "cefsharp.winforms/102.0.90",
+      "path": "cefsharp.winforms/102.0.100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Readme.txt",
-        "cefsharp.winforms.102.0.90.nupkg.sha512",
+        "cefsharp.winforms.102.0.100.nupkg.sha512",
         "cefsharp.winforms.nuspec",
         "lib/net452/CefSharp.WinForms.XML",
         "lib/net452/CefSharp.WinForms.dll",
@@ -1100,7 +1100,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
-      "CefSharp.WinForms >= 102.0.90",
+      "CefSharp.WinForms >= 102.0.100",
       "Newtonsoft.Json >= 13.0.1",
       "System.ValueTuple >= 4.5.0"
     ]
@@ -1112,11 +1112,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\DesktopWaifu.csproj",
+      "projectUniqueName": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\DesktopWaifu.csproj",
       "projectName": "DesktopWaifu",
-      "projectPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\DesktopWaifu.csproj",
+      "projectPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\DesktopWaifu.csproj",
       "packagesPath": "C:\\Users\\knize.lu.2019\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-testing-ground\\DesktopWaifu\\obj\\",
+      "outputPath": "C:\\Users\\knize.lu.2019\\Downloads\\DesktopWaifu-main\\DesktopWaifu\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1145,7 +1145,7 @@
         "dependencies": {
           "CefSharp.WinForms": {
             "target": "Package",
-            "version": "[102.0.90, )"
+            "version": "[102.0.100, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
